@@ -1,6 +1,9 @@
 CertStream API
 
 # certpwn - Cert-Monitoring Python Framework
+[![Build Status](https://travis-ci.com/d-Rickyy-b/certpwn.svg?branch=master)](https://travis-ci.com/d-Rickyy-b/certpwn)
+[![PyPI version](https://badge.fury.io/py/certpwn.svg)](https://badge.fury.io/py/certpwn)
+[![Coverage Status](https://coveralls.io/repos/github/d-Rickyy-b/certpwn/badge.svg?branch=master)](https://coveralls.io/github/d-Rickyy-b/certpwn?branch=master)
 Monitor ssl certificates in real time
 
 PastePwn is a tool to analyze freshly issued TLS certificates.
