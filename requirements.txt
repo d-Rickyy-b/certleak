@@ -1,2 +1,3 @@
+wheel
 certstream==1.11
 tldextract==2.2.2
