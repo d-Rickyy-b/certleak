@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from string import Template
 import collections
-import re
 import logging
+import re
+from string import Template
 
 from certpwn.util import DictWrapper
 
