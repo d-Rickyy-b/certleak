@@ -7,7 +7,7 @@ from .leafcert import LeafCert
 class Update(CertstreamObject):
     """Data class for the certificate Update type from certstream"""
 
-    def __init__(self, update_type, leaf_cert, chain, cert_index, seen, source):
+    def __init__(self, update_type, leaf_cert, chain, cert_index, seen, source, raw_dict):
         """
         Data class for the certificate Update type from certstream
         :param update_type: The type of the certificate update
@@ -24,7 +24,8 @@ class Update(CertstreamObject):
         self.cert_index = cert_index
         self.seen = seen
         self.source = source
-        self.all_domains = leaf_cert.all_domains
+        self.all_domains = leaf_cert.all_domains if leaf_cert is not None else ""
+        self.raw_dict = raw_dict
 
     @classmethod
     def from_dict(cls, data):
@@ -36,6 +37,7 @@ class Update(CertstreamObject):
         if not data:
             return None
 
+        raw_data = data.copy()
         data = super(Update, cls).from_dict(data)
         update_type = data.get("update_type")
         leaf_cert = LeafCert.from_dict(data.get("leaf_cert"))
@@ -49,7 +51,11 @@ class Update(CertstreamObject):
                    chain=chain,
                    cert_index=cert_index,
                    seen=seen,
-                   source=source)
+                   source=source,
+                   raw_dict=raw_data)
+
+    def to_dict(self):
+        return self.raw_dict
 
     def __repr__(self):
         return f"(update_type: {self.update_type}, leaf_cert: {self.leaf_cert}, chain: {self.chain}, cert_index: {self.cert_index}, seen: {self.seen}, " \
