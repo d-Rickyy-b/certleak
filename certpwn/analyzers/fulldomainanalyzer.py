@@ -31,4 +31,4 @@ class FullDomainAnalyzer(BasicAnalyzer):
                 if word in full_domain:
                     matches.append(full_domain)
 
-        return set(matches)
+        return list(set(matches))
