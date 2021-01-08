@@ -6,4 +6,4 @@ from .dictwrapper import DictWrapper
 from .templatingengine import TemplatingEngine
 from .request import Request
 
-__all__ = ('listify', 'start_thread', 'join_threads', 'DictWrapper', 'TemplatingEngine', 'Request')
+__all__ = ["listify", "start_thread", "join_threads", "DictWrapper", "TemplatingEngine", "Request"]

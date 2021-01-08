@@ -35,7 +35,7 @@ class CertstreamWrapper(object):
         :param context: context
         :return:
         """
-        if message['message_type'] == "heartbeat":
+        if message["message_type"] == "heartbeat":
             self.logger.debug("New heartbeat received!")
             return
 

@@ -16,7 +16,6 @@ class RegexDomainAnalyzer(BasicAnalyzer):
         :param actions:
         :param pattern: pattern to match a certain domain name
         :param flags: the flags found in the 're' module
-
         """
         super().__init__(actions)
         self.regex = re.compile(pattern, flags)

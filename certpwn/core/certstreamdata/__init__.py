@@ -8,4 +8,4 @@ from .chain import Chain
 from .update import Update
 from .message import Message
 
-__all__ = ['CertstreamObject', 'LeafCert', 'Subject', 'Extensions', 'Chain', 'Update', 'Message']
+__all__ = ["CertstreamObject", "LeafCert", "Subject", "Extensions", "Chain", "Update", "Message"]

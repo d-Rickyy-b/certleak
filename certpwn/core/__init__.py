@@ -9,4 +9,4 @@ from .analyzerhandler import AnalyzerHandler
 from .certstreamwrapper import CertstreamWrapper
 from .certpwn import CertPwn
 
-__all__ = ('CertPwn', 'Message', 'Update', 'ActionHandler', 'AnalyzerHandler', 'CertstreamWrapper')
+__all__ = ["CertPwn", "Message", "Update", "ActionHandler", "AnalyzerHandler", "CertstreamWrapper"]
