@@ -6,7 +6,7 @@ class Extensions(CertstreamObject):
     """Data class representing the certificate extensions"""
 
     def __init__(self, keyUsage, extendedKeyUsage, basicConstraints, subjectKeyIdentifier, authorityKeyIdentifier, authorityInfoAccess, subjectAltName,
-                 certificatePolicies):
+                 certificatePolicies, ctlSignedCertificateTimestamp):
         """
         Data class representing the certificate extensions
         :param keyUsage: keyUsage extension
@@ -17,6 +17,7 @@ class Extensions(CertstreamObject):
         :param authorityInfoAccess: authorityInfoAccess extension
         :param subjectAltName: subjectAltName extension
         :param certificatePolicies: certificatePolicies extension
+        :param ctlSignedCertificateTimestamp: ctlSignedCertificateTimestamp extension
         """
         super().__init__()
         self.keyUsage = keyUsage
@@ -27,6 +28,7 @@ class Extensions(CertstreamObject):
         self.authorityInfoAccess = authorityInfoAccess
         self.subjectAltName = subjectAltName
         self.certificatePolicies = certificatePolicies
+        self.ctlSignedCertificateTimestamp = ctlSignedCertificateTimestamp
 
     @classmethod
     def from_dict(cls, data):
@@ -47,6 +49,7 @@ class Extensions(CertstreamObject):
         authorityInfoAccess = data.get("authorityInfoAccess")
         subjectAltName = data.get("subjectAltName")
         certificatePolicies = data.get("certificatePolicies")
+        ctlSignedCertificateTimestamp = data.get("ctlSignedCertificateTimestamp")
 
         return cls(keyUsage=keyUsage,
                    extendedKeyUsage=extendedKeyUsage,
@@ -55,9 +58,10 @@ class Extensions(CertstreamObject):
                    authorityKeyIdentifier=authorityKeyIdentifier,
                    authorityInfoAccess=authorityInfoAccess,
                    subjectAltName=subjectAltName,
-                   certificatePolicies=certificatePolicies)
+                   certificatePolicies=certificatePolicies,
+                   ctlSignedCertificateTimestamp=ctlSignedCertificateTimestamp)
 
     def __repr__(self):
         return f"keyUsage: {self.keyUsage}, extendedKeyUsage: {self.extendedKeyUsage}, basicContstraints: {self.basicConstraints}, subjectKeyIdentifier: " \
                f"{self.subjectKeyIdentifier}, authorityKeyIdentifier: {self.authorityKeyIdentifier}, subjectAltName: {self.subjectAltName}, " \
-               f"certificatePolicies: {self.certificatePolicies}"
+               f"certificatePolicies: {self.certificatePolicies}, ctlSignedCertificateTimestamp: {self.ctlSignedCertificateTimestamp}"
