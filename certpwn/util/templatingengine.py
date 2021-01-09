@@ -35,7 +35,7 @@ class TemplatingEngine(object):
             matches_str = "\n".join(matches)
             update_dict["matches"] = matches_str
 
-        # Possibility to insert own/custom values into the paste_dict thus gives more control over the template string
+        # Possibility to insert own/custom values into the update_dict thus gives more control over the template string
         for name, value in kwargs.items():
             update_dict[name] = value
 

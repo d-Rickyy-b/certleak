@@ -15,7 +15,7 @@ class TestTemplatingEngine(unittest.TestCase):
             self.update = json.load(f)
 
     def test_fill_template(self):
-        """Checks if templating engine inserts paste data correctly into the template"""
+        """Checks if templating engine inserts cert data correctly into the template"""
         analyzer_name = "TestAnalyzer"
         template = "New update matched by analyzer '${analyzer_name}' - Domains: ${data.leaf_cert.subject.CN}\n\nMatches:\n${matches}"
         expected = "New update matched by analyzer '{0}' - Domains: {1}\n\nMatches:\n{2}".format(analyzer_name, "mytechnicalhindi.com", "")

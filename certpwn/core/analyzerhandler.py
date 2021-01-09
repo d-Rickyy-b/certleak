@@ -87,7 +87,7 @@ class AnalyzerHandler(object):
                 self.action_queue.put((actions, update, analyzer, matches))
 
     def stop(self):
-        """Stops dispatching pastes to the analyzers"""
+        """Stops dispatching updates to the analyzers"""
         self.logger.info("Orderly stopping AnalyzerHandler!")
         self.__stop_event.set()
         while self.running:

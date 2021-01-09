@@ -13,7 +13,7 @@ class BasicAnalyzer(object):
     def __init__(self, actions, identifier=None):
         """
         Basic analyzer which is extended to create other analyzer subclasses
-        :param actions: A single action or a list of actions to be executed on every paste
+        :param actions: A single action or a list of actions to be executed on every update
         :param identifier: The name or unique identifier for this specific analyzer
         """
         self.logger = logging.getLogger(__name__)
@@ -38,7 +38,7 @@ class BasicAnalyzer(object):
         """
         Checks if a certain update is matched by the conditions set for this analyzer
         :param update: A :class:`certpwn.core.certstreamdata.update` object which should be matched
-        :return: :obj:`bool` if the paste has been matched
+        :return: :obj:`bool` if the update has been matched
         """
         raise NotImplementedError("Your analyzer must implement the match method!")
 
@@ -91,7 +91,7 @@ class MergedAnalyzer(BasicAnalyzer):
         """
         Checks if a certain update is matched by the conditions set for this analyzer
         :param update: A :class:`certpwn.core.certstreamdata.update` object which should be matched
-        :return: :obj:`bool` if the paste has been matched
+        :return: :obj:`bool` if the update has been matched
         """
         if self._and_analyzer:
             return bool(self._base_analyzer.match(update)) and bool(self._and_analyzer.match(update))
