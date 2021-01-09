@@ -3,7 +3,9 @@ import logging
 from queue import Queue
 from threading import Event
 
-from certpwn.core import ActionHandler, AnalyzerHandler, CertstreamWrapper
+from certpwn.core.actionhandler import ActionHandler
+from certpwn.core.analyzerhandler import AnalyzerHandler
+from certpwn.core.certstreamwrapper import CertstreamWrapper
 
 
 class CertPwn(object):

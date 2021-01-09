@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import unittest
 import json
+import unittest
 
-from certpwn.core.certstreamdata import Update
 from certpwn.util.templatingengine import TemplatingEngine
 
 
