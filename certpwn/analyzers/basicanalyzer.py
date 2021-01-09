@@ -59,6 +59,9 @@ class BasicAnalyzer(object):
     def __or__(self, other):
         return MergedAnalyzer(self, or_analyzer=other)
 
+    def __invert__(self):
+        return MergedAnalyzer(base_analyzer=None, not_analyzer=self)
+
     def __repr__(self):
         if self.identifier is None:
             self.identifier = self.__class__.__name__
@@ -69,10 +72,11 @@ class MergedAnalyzer(BasicAnalyzer):
     """Merged analyzer class"""
     name = "MergedAnalyzer"
 
-    def __init__(self, base_analyzer, and_analyzer=None, or_analyzer=None):
+    def __init__(self, base_analyzer, and_analyzer=None, or_analyzer=None, not_analyzer=None):
         self._base_analyzer = base_analyzer
         self._and_analyzer = and_analyzer
         self._or_analyzer = or_analyzer
+        self._not_analyzer = not_analyzer
 
         if self._and_analyzer:
             actions = base_analyzer.actions + self._and_analyzer.actions
@@ -80,10 +84,13 @@ class MergedAnalyzer(BasicAnalyzer):
         elif self._or_analyzer:
             actions = base_analyzer.actions + self._or_analyzer.actions
             identifier = "({} || {})".format(base_analyzer.identifier, self._or_analyzer)
+        elif self._not_analyzer:
+            actions = self._not_analyzer.actions
+            identifier = "~({})".format(self._not_analyzer)
         else:
             actions = []
             identifier = "Broken analyzer"
-            self.logger.error("Neither and_analyzer nor or_analyzer are set!")
+            self.logger.error("Neither and_analyzer, or_analyzer nor not_analyzer are set!")
 
         super().__init__(actions, identifier=identifier)
 
@@ -97,3 +104,5 @@ class MergedAnalyzer(BasicAnalyzer):
             return bool(self._base_analyzer.match(update)) and bool(self._and_analyzer.match(update))
         elif self._or_analyzer:
             return bool(self._base_analyzer.match(update)) or bool(self._or_analyzer.match(update))
+        elif self._not_analyzer:
+            return not bool(self._not_analyzer.match(update))
