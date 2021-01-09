@@ -53,7 +53,7 @@ class TemplatingEngine(object):
         return text
 
     @staticmethod
-    def _flatten_update_dict(d, parent_key='', sep='__'):
+    def _flatten_update_dict(d, parent_key="", sep="__"):
         """
         Flattens and returns any given dict
         :param d: The dictionary to be flattened
