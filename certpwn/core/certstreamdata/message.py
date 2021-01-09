@@ -31,3 +31,6 @@ class Message(CertstreamObject):
         update = Update.from_dict(data.get("data"))
 
         return cls(message_type=message_type, update=update)
+
+    def __repr__(self):
+        return ""
