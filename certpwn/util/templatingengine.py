@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import collections
 import logging
 import re
+from collections.abc import MutableMapping
 from string import Template
 
 from certpwn.util import DictWrapper
@@ -65,7 +65,7 @@ class TemplatingEngine(object):
         items = []
         for key, value in d.items():
             new_key = parent_key + sep + key if parent_key else key
-            if isinstance(value, collections.MutableMapping):
+            if isinstance(value, MutableMapping):
                 items.extend(TemplatingEngine._flatten_update_dict(value, new_key, sep=sep).items())
             else:
                 items.append((new_key, value))
