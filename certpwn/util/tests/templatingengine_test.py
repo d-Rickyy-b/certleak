@@ -47,6 +47,64 @@ class TestTemplatingEngine(unittest.TestCase):
         result = TemplatingEngine._normalize_placeholders(template_string)
         self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
 
+    def test__normalize_placeholders_separator(self):
+        """Check if '_normalize_placeholders' works with any separator"""
+        template_string = "This is a ${analyzer_name} test template with ${data.leaf_cert} two placeholders and data.leaf_cert some decoy data."
+        expected = "This is a ${analyzer_name} test template with ${data###leaf_cert} two placeholders and data.leaf_cert some decoy data."
+        separator = "###"
+        result = TemplatingEngine._normalize_placeholders(template_string, sep=separator)
+        self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
+
+    def test__flatten_update_dict(self):
+        """Check if flattening dicts works as intended"""
+        d = {"test": "asdf",
+             "nested": {"inner": "content", "another": "other content"},
+             "double_nested": {"inside_double_nested": {"totally_inner": "final"}},
+             "outer": "yes"
+             }
+        new_d = TemplatingEngine._flatten_update_dict(d, parent_key="", sep="__")
+
+        # Make sure new_d contains 5 elements on the root level
+        self.assertEqual(len(new_d), 5)
+
+        # Check if combined keys are contained in the dict
+        self.assertIn("test", new_d)
+        self.assertIn("nested__inner", new_d)
+        self.assertIn("nested__another", new_d)
+        self.assertIn("double_nested__inside_double_nested__totally_inner", new_d)
+        self.assertIn("outer", new_d)
+
+        # Make sure that "nested" doesn't exist anymore
+        nested = new_d.get("nested")
+        self.assertIsNone(nested)
+
+        # Check if nested elements have been pulled up correctly
+        nested_inner = new_d.get("nested__inner")
+        self.assertEqual(nested_inner, "content")
+
+        # Check for double nested content
+        double_nested_inner = new_d.get("double_nested__inside_double_nested__totally_inner")
+        self.assertEqual(double_nested_inner, "final")
+
+    def test__flatten_update_dict_separator(self):
+        """Check if changing separators works as intended"""
+        d = {"test": "asdf",
+             "nested": {"inner": "content", "another": "other content"},
+             "double_nested": {"inside_double_nested": {"totally_inner": "final"}},
+             "outer": "yes"
+             }
+        new_d = TemplatingEngine._flatten_update_dict(d, parent_key="", sep="###")
+
+        # Make sure new_d contains 5 elements on the root level
+        self.assertEqual(len(new_d), 5)
+
+        # Check if changing separators works as intended
+        self.assertIn("test", new_d)
+        self.assertIn("nested###inner", new_d)
+        self.assertIn("nested###another", new_d)
+        self.assertIn("double_nested###inside_double_nested###totally_inner", new_d)
+        self.assertIn("outer", new_d)
+
 
 if __name__ == "__main__":
     unittest.main()
