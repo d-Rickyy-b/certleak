@@ -24,18 +24,21 @@ class TestTemplatingEngine(unittest.TestCase):
         self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
 
     def test__normalize_placeholders_no_placeholder(self):
+        """Check if '_normalize_placeholders' works for strings without placeholders"""
         template_string = "This is a test template with no placeholder"
         expected = "This is a test template with no placeholder"
         result = TemplatingEngine._normalize_placeholders(template_string)
         self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
 
     def test__normalize_placeholders_two_placeholders(self):
+        """Check if '_normalize_placeholders' works for strings with two placeholders"""
         template_string = "This is a ${analyzer_name} test template with ${data.leaf_cert} two placeholders"
         expected = "This is a ${analyzer_name} test template with ${data__leaf_cert} two placeholders"
         result = TemplatingEngine._normalize_placeholders(template_string)
         self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
 
     def test__normalize_placeholders_two_placeholders_decoy(self):
+        """Check if '_normalize_placeholders' works for strings with two placeholders and some decoy placeholder"""
         template_string = "This is a ${analyzer_name} test template with ${data.leaf_cert} two placeholders and data.leaf_cert some decoy data."
         expected = "This is a ${analyzer_name} test template with ${data__leaf_cert} two placeholders and data.leaf_cert some decoy data."
         result = TemplatingEngine._normalize_placeholders(template_string)
