@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import pathlib
 import unittest
 from unittest.mock import Mock
 
@@ -13,7 +14,8 @@ class TestTemplatingEngine(unittest.TestCase):
         """Sets up the test case"""
         self.update = Mock()
         self.update.to_dict = Mock()
-        with open("test.json", "r", encoding="utf-8") as f:
+        test_file = pathlib.Path(__file__).parent.absolute() / "test.json"
+        with open(test_file, "r", encoding="utf-8") as f:
             self.update.to_dict.return_value = json.load(f)
 
     def test_fill_template(self):
