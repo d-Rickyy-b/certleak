@@ -2,6 +2,7 @@
 
 import json
 import unittest
+from unittest.mock import Mock
 
 from certpwn.util.templatingengine import TemplatingEngine
 
@@ -10,8 +11,10 @@ class TestTemplatingEngine(unittest.TestCase):
 
     def setUp(self):
         """Sets up the test case"""
+        self.update = Mock()
+        self.update.to_dict = Mock()
         with open("test.json", "r", encoding="utf-8") as f:
-            self.update = json.load(f)
+            self.update.to_dict.return_value = json.load(f)
 
     def test_fill_template(self):
         """Checks if templating engine inserts cert data correctly into the template"""
