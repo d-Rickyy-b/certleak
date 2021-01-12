@@ -57,5 +57,5 @@ class Update(CertstreamObject):
         return self.raw_dict
 
     def __repr__(self):
-        return f"(update_type: {self.update_type}, leaf_cert: {self.leaf_cert}, chain: {self.chain}, cert_index: {self.cert_index}, seen: {self.seen}, " \
+        return f"(update_type: {self.update_type}, leaf_cert: {self.leaf_cert}, chain: {self.cert_index}, cert_index: {self.cert_link}, seen: {self.seen}, " \
                f"source: {self.source})"
