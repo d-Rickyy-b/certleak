@@ -1,2 +1,5 @@
 certstream==1.11
 tldextract==2.2.2
+dnstwist==20201228
+
+requests==2.25.1
