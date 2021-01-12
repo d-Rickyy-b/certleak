@@ -5,7 +5,7 @@ from threading import Lock, Event
 
 from certstream.core import CertStreamClient
 
-from certpwn.core import Message
+from certpwn.core.certstreamdata.message import Message
 from certpwn.util import start_thread, join_threads
 
 
