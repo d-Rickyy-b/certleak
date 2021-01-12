@@ -47,7 +47,6 @@ class TemplatingEngine(object):
         template = Template(template_string)
 
         flattened_dict = TemplatingEngine._flatten_update_dict(update_dict)
-        print(flattened_dict)
 
         text = template.safe_substitute(DictWrapper(flattened_dict))
         return text
