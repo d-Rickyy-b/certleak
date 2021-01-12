@@ -19,10 +19,7 @@ class TestTemplatingEngine(unittest.TestCase):
         template = "New update matched by analyzer '${analyzer_name}' - Domains: ${data.leaf_cert.subject.CN}\n\nMatches:\n${matches}"
         expected = "New update matched by analyzer '{0}' - Domains: {1}\n\nMatches:\n{2}".format(analyzer_name, "mytechnicalhindi.com", "")
 
-        print(template)
-        print(expected)
         result = TemplatingEngine.fill_template(update=self.update, analyzer_name=analyzer_name, template_string=template)
-        print(result)
 
         self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
 
