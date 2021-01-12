@@ -12,6 +12,7 @@ class TestAlwaysTrueAnalyzer(unittest.TestCase):
         self.update = mock.Mock()
 
     def test_match(self):
+        """Check if AlwaysTrueAnalyzer returns always True"""
         self.update.body = "Test"
         self.assertTrue(self.analyzer.match(self.update))
 
@@ -25,6 +26,7 @@ class TestAlwaysTrueAnalyzer(unittest.TestCase):
         self.assertTrue(self.analyzer.match(self.update))
 
     def test_actions_present(self):
+        """Check if the actions are stored for the AlwaysTrueAnalyzer"""
         action = mock.MagicMock(spec=BasicAction)
         analyzer = AlwaysTrueAnalyzer(action)
         self.assertEqual([action], analyzer.actions)
