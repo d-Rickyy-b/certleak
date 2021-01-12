@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from .alwaystrueanalyzer import AlwaysTrueAnalyzer
-from .authoritykeyidanalyzer import AuthorityKeyIDAnalyzer
 from .basicanalyzer import BasicAnalyzer
 from .cafingerprintanalyzer import CAFingerprintAnalyzer
 from .dnstwistanalyzer import DNStwistAnalyzer
@@ -13,4 +12,4 @@ from .wildcardcertanalyzer import WildcardCertAnalyzer
 from .x509analyzer import X509Analyzer
 
 __all__ = ["BasicAnalyzer", "TLDAnalyzer", "FullDomainAnalyzer", "AlwaysTrueAnalyzer", "WildcardCertAnalyzer", "X509Analyzer", "PreCertAnalyzer",
-           "LetsEncryptAnalyzer", "RegexDomainAnalyzer", "AuthorityKeyIDAnalyzer", "DNStwistAnalyzer"]
+           "LetsEncryptAnalyzer", "RegexDomainAnalyzer", "DNStwistAnalyzer"]
