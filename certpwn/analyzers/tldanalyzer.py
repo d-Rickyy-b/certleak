@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import tldextract
-import logging
 
 from certpwn.util import listify
 from .basicanalyzer import BasicAnalyzer
