@@ -2,4 +2,4 @@
 
 from .errors import CertpwnError, InvalidActionError
 
-__all__ = ['InvalidActionError']
+__all__ = ["CertpwnError", "InvalidActionError"]
