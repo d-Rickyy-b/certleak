@@ -28,6 +28,17 @@ class TestTemplatingEngine(unittest.TestCase):
 
         self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
 
+    def test_fill_template_default_template(self):
+        """Checks if templating engine inserts cert data correctly into the template for the default template"""
+        analyzer_name = "TestAnalyzer"
+        expected = "New update matched by analyzer '{0}' - Domains: {1}\n\nMatches:\n{2}".format(analyzer_name, "www.mail.casamarket.ro", "")
+
+        result = TemplatingEngine.fill_template(update=self.update, analyzer_name=analyzer_name, template_string=None)
+        self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
+
+        result = TemplatingEngine.fill_template(update=self.update, analyzer_name=analyzer_name, template_string="")
+        self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
+
     def test__normalize_placeholders_no_placeholder(self):
         """Check if '_normalize_placeholders' works for strings without placeholders"""
         template_string = "This is a test template with no placeholder"
