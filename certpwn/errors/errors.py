@@ -3,12 +3,13 @@
 
 class CertpwnError(Exception):
     """Representation of a certpwn error object."""
+
     def __init__(self, message):
         super().__init__(message)
         self.message = message
 
     def __str__(self):
-        return '%s' % self.message
+        return str(self.message)
 
 
 class InvalidActionError(CertpwnError):
