@@ -41,7 +41,7 @@ class TemplatingEngine(object):
 
         # Fallback if the template string is empty or non existent
         if template_string is None or template_string == "":
-            template_string = "New update matched by analyzer '${analyzer_name}' - Domains: ${data.leaf_cert.subject.cn}\n\nMatches:\n${matches}"
+            template_string = "New update matched by analyzer '${analyzer_name}' - Domains: ${data.leaf_cert.subject.CN}\n\nMatches:\n${matches}"
 
         template_string = TemplatingEngine._normalize_placeholders(template_string)
         template = Template(template_string)
