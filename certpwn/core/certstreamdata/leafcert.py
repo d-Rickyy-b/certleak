@@ -7,7 +7,7 @@ from .subject import Subject
 class LeafCert(CertstreamObject):
     """Data class for the LeafCert data structure of certstream"""
 
-    def __init__(self, subject, issuer, extensions, not_before, not_after, serial_number, fingerprint, signature_algorithm, all_domains):
+    def __init__(self, subject, issuer, extensions, not_before, not_after, serial_number, fingerprint, signature_algorithm, all_domains, as_der):
         """
         Data class for the LeafCert data structure of certstream
         :param subject: Certificate subject
@@ -18,6 +18,8 @@ class LeafCert(CertstreamObject):
         :param fingerprint: Certificate fingerprint
         :param signature_algorithm: Signature algorithm
         :param all_domains: List of all domains contained in this cert
+        :param as_der: DER (Distinguished Encoding Rules) encoded binary representation of the certificate, only
+                    available for the /full-stream endpoint. Will be None otherwise.
         """
         super().__init__()
         self.subject = subject
@@ -29,6 +31,7 @@ class LeafCert(CertstreamObject):
         self.fingerprint = fingerprint
         self.signature_algorithm = signature_algorithm
         self.all_domains = all_domains
+        self.as_der = as_der
 
     @classmethod
     def from_dict(cls, data):
@@ -50,6 +53,7 @@ class LeafCert(CertstreamObject):
         fingerprint = data.get("fingerprint")
         all_domains = data.get("all_domains")
         signature_algorithm = data.get("signature_algorithm")
+        as_der = data.get("as_der")
 
         return cls(subject=subject,
                    issuer=issuer,
@@ -59,7 +63,8 @@ class LeafCert(CertstreamObject):
                    serial_number=serial_number,
                    fingerprint=fingerprint,
                    signature_algorithm=signature_algorithm,
-                   all_domains=all_domains)
+                   all_domains=all_domains,
+                   as_der=as_der)
 
     def __repr__(self):
-        return f"(subject: {self.subject}, issuer: {self.issuer}, extensions: {self.extensions}, not_before: {self.not_before}, not_after: {self.not_after}, serial_number: {self.serial_number}, fingerprint: {self.fingerprint}, all_domains: {self.all_domains})"
+        return f"(subject: {self.subject}, issuer: {self.issuer}, extensions: {self.extensions}, not_before: {self.not_before}, not_after: {self.not_after}, serial_number: {self.serial_number}, fingerprint: {self.fingerprint}, all_domains: {self.all_domains}, as_der: {self.as_der})"
