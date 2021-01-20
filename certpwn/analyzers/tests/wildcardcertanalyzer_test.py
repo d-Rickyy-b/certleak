@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from certpwn.analyzers import WildcardCertAnalyzer
 
@@ -95,6 +95,20 @@ class WildcardCertAnalyzerTest(unittest.TestCase):
         self.assertIn("*.example.com", match)
         self.assertIn("*.test.com", match)
         self.assertIn("*.asdf.com", match)
+
+    @patch("certpwn.analyzers.wildcardcertanalyzer.tldextract")
+    def test_match_exception(self, tldextract_mock):
+        """Check if exception in tldextract 'extract' method is handled correctly"""
+        tldextract_mock.extract = Mock(side_effect=Exception("Test exception for tldextract"))
+
+        update = Mock()
+        update.all_domains = ["*.example.com", "*.test.com", "*.asdf.com"]
+
+        # The extract method will raise an exception that must be catched
+        matches = self.analyzer.match(update)
+        tldextract_mock.extract.assert_called()
+        self.assertFalse(matches)
+        self.assertEqual(0, len(matches))
 
 
 if __name__ == "__main__":
