@@ -30,10 +30,11 @@ class WildcardCertAnalyzer(BasicAnalyzer):
         for full_domain in update.all_domains:
             try:
                 extract_result = tldextract.extract(full_domain)
-
-                if extract_result.subdomain == "*" and not any(word in full_domain for word in self.blacklist):
-                    matches.append(full_domain)
             except Exception as e:
                 self.logger.error("During matching of an update, the following exception occurred: {0}".format(e))
+                continue
+
+            if extract_result.subdomain == "*" and not any(word in full_domain for word in self.blacklist):
+                matches.append(full_domain)
 
         return list(set(matches))
