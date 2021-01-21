@@ -90,6 +90,23 @@ class TestFullDomainAnalyzer(unittest.TestCase):
         analyzer = FullDomainAnalyzer(action)
         self.assertEqual([action], analyzer.actions)
 
+    def test_exact_match(self):
+        """Check if the analyzer matches if passing a single domain to it using the exact_match param"""
+        analyzer = FullDomainAnalyzer(self.action, "test", exact_match=True)
+        update = mock.Mock()
+        update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]
+        matches = analyzer.match(update)
+        self.assertFalse(matches)
+        self.assertEqual(0, len(matches))
+
+        analyzer = FullDomainAnalyzer(self.action, "test.example.com", exact_match=True)
+        update = mock.Mock()
+        update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]
+        matches = analyzer.match(update)
+        self.assertTrue(matches)
+        self.assertEqual(1, len(matches))
+        self.assertEqual("test.example.com", matches[0])
+
 
 if __name__ == "__main__":
     unittest.main()
