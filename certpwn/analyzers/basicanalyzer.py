@@ -2,8 +2,8 @@
 import logging
 
 from certpwn.actions import BasicAction
-from certpwn.util import listify
 from certpwn.errors import InvalidActionError
+from certpwn.util import listify
 
 
 class BasicAnalyzer(object):
@@ -88,9 +88,7 @@ class MergedAnalyzer(BasicAnalyzer):
             actions = self._not_analyzer.actions
             identifier = "~({})".format(self._not_analyzer)
         else:
-            actions = []
-            identifier = "Broken analyzer"
-            self.logger.error("Neither and_analyzer, or_analyzer nor not_analyzer are set!")
+            raise ValueError("Neither and_analyzer, or_analyzer nor not_analyzer are set!")
 
         super().__init__(actions, identifier=identifier)
 
