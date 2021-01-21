@@ -26,8 +26,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install flake8 flake8-print pytest coveralls wheel
+          python -m pip install pytest coveralls wheel
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f flake8_requirements.txt ]; then pip install -r flake8_requirements.txt; fi
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
