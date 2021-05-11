@@ -1,12 +1,11 @@
-CertStream API
+# certleak - Cert-Monitoring Python Framework
 
-# certpwn - Cert-Monitoring Python Framework
 [![Run tests and lint](https://github.com/d-Rickyy-b/certpwn/workflows/Run%20tests%20and%20lint/badge.svg)](https://github.com/d-Rickyy-b/certpwn/actions?query=workflow%3A%22Run+tests+and+lint%22)
 [![PyPI version](https://badge.fury.io/py/certpwn.svg)](https://badge.fury.io/py/certpwn)
 [![Coverage Status](https://coveralls.io/repos/github/d-Rickyy-b/certpwn/badge.svg?branch=master)](https://coveralls.io/github/d-Rickyy-b/certpwn?branch=master)
 
 Monitor ssl certificates in real time!  
-PastePwn is a tool to analyze TLS certificates as they are issued.
+Certleak is a tool to analyze TLS certificates as they are issued.
 It is heavily inspired by [Phishing Catcher](https://github.com/x0rz/phishing_catcher) by [x0rz](https://twitter.com/x0rz). 
 
 It utilizes the [Certificate Transparency Network](https://www.certificate-transparency.org/what-is-ct) which is a framework for publicly monitoring
