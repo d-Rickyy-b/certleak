@@ -1,3 +1,5 @@
+[![certleak logo](https://raw.githubusercontent.com/d-Rickyy-b/certleak/master/docs/certleak_logo.png)](https://github.com/d-Rickyy-b/certleak)
+
 # certleak - Cert-Monitoring Python Framework
 [![Run tests and lint](https://github.com/d-Rickyy-b/certpwn/workflows/Run%20tests%20and%20lint/badge.svg)](https://github.com/d-Rickyy-b/certpwn/actions?query=workflow%3A%22Run+tests+and+lint%22)
 [![PyPI version](https://badge.fury.io/py/certpwn.svg)](https://badge.fury.io/py/certpwn)
