@@ -41,23 +41,23 @@ if CI:
 else:
     # Taken from https://packaging.python.org/guides/single-sourcing-package-version/
     version_dict = {}
-    version_file = os.path.join(setup_path, "certpwn", "version.py")
+    version_file = os.path.join(setup_path, "certleak", "version.py")
     with open(version_file, "r", encoding="utf-8") as file:
         exec(file.read(), version_dict)
     version = version_dict["__version__"]
 
-print("Building version {} of certpwn".format(version))
+print("Building version {} of certleak".format(version))
 
-setup(name="certpwn",
+setup(name="certleak",
       version=version,
       install_requires=requirements(),
       keywords="python certificate tls osint framework",
       description="Python framework for collecting and analyzing TLS certificate data via the Certificate Transparency Network",
       long_description=readme,
       long_description_content_type="text/markdown",
-      url="https://github.com/d-Rickyy-b/certpwn",
+      url="https://github.com/d-Rickyy-b/certleak",
       author="d-Rickyy-b",
-      author_email="certpwn@rico-j.de",
+      author_email="certleak@rico-j.de",
       license="MIT",
       packages=packages,
       include_package_data=True,
