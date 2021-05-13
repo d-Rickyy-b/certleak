@@ -19,6 +19,9 @@ Since certleak uses certstream, it only enables you to analyze live data.
 There is no way to use this tool to analyze certificates that have been issued in the past or while being offline.
 
 ## Extensibility
+Creating new analyzers or actions is as easy as creating a new python file.
+Certleak is built with extensibility in mind.
+Check the [analyzer docs](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/analyzers/README.md) as well as the [actions docs](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/actions/README.md).  
 
 
 ## Installation
