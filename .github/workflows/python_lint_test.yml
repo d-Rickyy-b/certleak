@@ -40,6 +40,6 @@ jobs:
           coverage run --omit='*/virtualenv/*,*/site-packages/*' -m pytest
       - name: Publish coverage
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: |
           coveralls
