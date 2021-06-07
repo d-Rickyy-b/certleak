@@ -1,0 +1,8 @@
+.gitignore
+.gitattributes
+.github
+.coveragerc
+/.git
+/.venv
+/venv
+/examples
