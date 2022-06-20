@@ -35,7 +35,6 @@ class CertLeak(object):
         :return:
         """
         self.logger.info("Starting certleak!")
-        self.is_idle = False
         self.certstream_wrapper.start()
         self.analyzer_handler.start()
         self.action_handler.start()
@@ -71,7 +70,6 @@ class CertLeak(object):
         :param stop_signals: The signals to which the code reacts to
         """
         self.is_idle = True
-        self.logger.info("In Idle!")
 
         for sig in stop_signals:
             signal(sig, self.signal_handler)
