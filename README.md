@@ -2,7 +2,7 @@
 
 # certleak - Cert-Monitoring Python Framework
 [![Run tests and lint](https://github.com/d-Rickyy-b/certleak/workflows/Run%20tests%20and%20lint/badge.svg)](https://github.com/d-Rickyy-b/certleak/actions?query=workflow%3A%22Run+tests+and+lint%22)
-[![PyPI version](https://badge.fury.io/py/certleak.svg)](https://badge.fury.io/py/certleak)
+[![PyPI version](https://badge.fury.io/py/certleak.svg)](https://pypi.org/project/certleak/)
 [![Coverage Status](https://coveralls.io/repos/github/d-Rickyy-b/certleak/badge.svg?branch=master)](https://coveralls.io/github/d-Rickyy-b/certleak?branch=master)
 
 Monitor ssl certificates in real time!  
