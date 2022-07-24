@@ -98,7 +98,7 @@ class CertstreamWrapper(object):
             self.certstream_client = CertStreamClient(self._fill_queue, self.certstream_url)
             self.certstream_client._on_error = self._on_error
             self.certstream_client._on_close = self._on_close
-            self.certstream_client.run_forever(ping_interval=15)
+            self.certstream_client.run_forever(ping_interval=30)
             time.sleep(1)
 
     def start(self):
