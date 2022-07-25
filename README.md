@@ -5,16 +5,15 @@
 [![PyPI version](https://badge.fury.io/py/certleak.svg)](https://pypi.org/project/certleak/)
 [![Coverage Status](https://coveralls.io/repos/github/d-Rickyy-b/certleak/badge.svg?branch=master)](https://coveralls.io/github/d-Rickyy-b/certleak?branch=master)
 
-Monitor ssl certificates in real time!  
-Certleak is a tool to analyze TLS certificates as they are issued.
+Certleak is a tool to monitor and analyze TLS certificates as they are issued.
 It is heavily inspired by [Phishing Catcher](https://github.com/x0rz/phishing_catcher) by [x0rz](https://twitter.com/x0rz). 
 
-It utilizes the [Certificate Transparency Network](https://www.certificate-transparency.org/what-is-ct) which is a framework for publicly monitoring issuance of TLS certificates.
+It utilizes the [Certificate Transparency Network](https://www.certificate-transparency.org/what-is-ct), which is an ecosystem for publicly monitoring issuance of TLS certificates.
 
 A regular use case of this tool is to find phishing domains before they are actively used in the wild.
 
 Instead of querying the single transparency log servers individually, certleak uses [certstream](https://certstream.calidog.io/) for analyzing certificates in real time.
-Certleak uses about 2600-3000 kbit/s of bandwidth.
+To do that, it uses about 2600-3000 kbit/s of bandwidth.
 Since certleak uses certstream, it only enables you to analyze live data.
 There is no way to use this tool to analyze certificates that have been issued in the past or while being offline.
 
