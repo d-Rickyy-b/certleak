@@ -62,8 +62,9 @@ class CertstreamWrapper(object):
         else:
             self.update_queue.put(update)
 
-        for domain in msg.update.all_domains:
-            self.processed_domains.add(domain)
+        if msg.update and msg.update.all_domains:
+            for domain in msg.update.all_domains:
+                self.processed_domains.add(domain)
 
         time_passed = int(time.time()) - self.last_info
         if time_passed >= 60:
