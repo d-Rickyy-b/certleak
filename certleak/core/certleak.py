@@ -38,6 +38,8 @@ class CertLeak(object):
         self.certstream_wrapper.start()
         self.analyzer_handler.start()
         self.action_handler.start()
+        # Run until signal is received
+        self.idle()
 
     def stop(self):
         """
