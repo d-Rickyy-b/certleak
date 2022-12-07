@@ -27,7 +27,7 @@ class DNStwistAnalyzer(BasicAnalyzer):
 
         # Generate pot. phishing domain names via dnstwist
         self.logger.info("Generating phishing domains via dnstwist for domain '{0}'".format(domainname))
-        fuzz = dnstwist.DomainFuzz(domainname)
+        fuzz = dnstwist.Fuzzer(domainname)
         fuzz.generate()
         res = fuzz.domains
 
