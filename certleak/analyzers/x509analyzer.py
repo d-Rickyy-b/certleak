@@ -13,4 +13,6 @@ class X509Analyzer(BasicAnalyzer):
         super().__init__(actions)
 
     def match(self, update):
+        if not update or not update.update_type:
+            return False
         return update.update_type == "X509LogEntry"

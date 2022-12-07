@@ -56,6 +56,9 @@ class DNStwistAnalyzer(BasicAnalyzer):
         :param update: An update object which should be matched
         :return: `bool` if the update has been matched
         """
+        if not update or not update.all_domains:
+            return False
+
         for domain in update.all_domains:
             if domain in self.generated_domains:
                 # TODO implement "contained in" feature - e.g. for subdomains

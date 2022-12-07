@@ -22,7 +22,7 @@ class RegexDomainAnalyzer(BasicAnalyzer):
 
     def match(self, update):
         """Match the domains of a cert update against the given regex"""
-        if update is None:
+        if not update or not update.all_domains:
             return False
 
         matches = []
