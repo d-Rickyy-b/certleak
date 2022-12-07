@@ -55,7 +55,7 @@ class AnalyzerHandler(object):
         while self.running:
             try:
                 # Get cert update from queue
-                update = self.update_queue.get(True, 1)
+                update = self.update_queue.get(block=True, timeout=1)
 
                 # TODO implement thread pool to limit number of parallel executed threads
                 # Don't add these threads to the list. Otherwise they will just block the list
