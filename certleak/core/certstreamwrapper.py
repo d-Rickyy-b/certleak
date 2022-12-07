@@ -34,6 +34,12 @@ class CertstreamWrapper(object):
         self.error_counter = 0
         self.processed_domains = set()
 
+    def _handle_message(self, message, context):
+        try:
+            self._fill_queue(message, context)
+        except Exception as e:
+            logging.error("Exception while handling certstream message!", e)
+
     def _fill_queue(self, message, context):
         """
         This method is being used as a callback function for the certstream module. It get's called on each new message.
@@ -95,7 +101,7 @@ class CertstreamWrapper(object):
         :return:
         """
         while not self.__stop_event.is_set() and not self.__exception_event.is_set():
-            self.certstream_client = CertStreamClient(self._fill_queue, self.certstream_url)
+            self.certstream_client = CertStreamClient(self._handle_message, self.certstream_url, skip_heartbeats=True)
             self.certstream_client._on_error = self._on_error
             self.certstream_client._on_close = self._on_close
             self.certstream_client.run_forever(ping_interval=30)
