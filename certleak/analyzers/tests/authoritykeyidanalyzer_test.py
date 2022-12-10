@@ -14,14 +14,14 @@ class TestAuthorityKeyIDAnalyzer(unittest.TestCase):
 
     def test_match(self):
         """Check if AuthorityKeyIDAnalyzer matches the authorityKeyIdentifier"""
-        self.update.extensions.authorityKeyIdentifier = "keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6\n"
+        self.update.extensions.authorityKeyIdentifier = "keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6"
         self.assertTrue(self.analyzer.match(self.update))
 
         self.update.extensions.authorityKeyIdentifier = None
         self.assertFalse(self.analyzer.match(self.update))
 
         self.update.extensions.authorityKeyIdentifier = ""
-        self.assertTrue(self.analyzer.match(self.update))
+        self.assertFalse(self.analyzer.match(self.update))
 
         self.update = None
         self.assertFalse(self.analyzer.match(self.update))
