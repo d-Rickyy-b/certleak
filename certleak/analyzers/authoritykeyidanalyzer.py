@@ -22,6 +22,9 @@ class AuthorityKeyIDAnalyzer(BasicAnalyzer):
         self.authority_key_id = authority_key_id.lower()
 
     def match(self, update):
+        if not update:
+            return False
+
         authority_key_identifier = update.extensions.authorityKeyIdentifier
         if authority_key_identifier is None:
             return False
