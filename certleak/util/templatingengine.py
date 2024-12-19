@@ -22,7 +22,7 @@ class TemplatingEngine(object):
         """
         if update is None:
             logging.error("Update is None!")
-            return
+            return None
 
         update_dict = update.to_dict()
         update_dict["analyzer_name"] = analyzer_name

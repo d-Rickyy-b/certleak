@@ -105,3 +105,5 @@ class MergedAnalyzer(BasicAnalyzer):
             return bool(self._base_analyzer.match(update)) or bool(self._or_analyzer.match(update))
         elif self._not_analyzer:
             return not bool(self._not_analyzer.match(update))
+
+        return False
