@@ -33,9 +33,9 @@ classifiers = [
 ]
 dependencies = [
     "certstream>=1.12",
-    "dnstwist",
-    "requests",
-    "tldextract",
+    "dnstwist>=20240812",
+    "requests>=2.32",
+    "tldextract>=5.0",
 ]
 
 [project.optional-dependencies]
