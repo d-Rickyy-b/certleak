@@ -41,5 +41,9 @@ class SubDomainAnalyzer(BasicAnalyzer):
                     if subdomain in self.subdomains:
                         matches.append(domain)
                         continue
+                else:
+                    # If not in exact mode, check if the subdomain of the certificate
+                    # contains any of the the words specified by self.subdomains
+                    matches.extend([domain for word in self.subdomains if word in subdomain])
 
         return list(set(matches))

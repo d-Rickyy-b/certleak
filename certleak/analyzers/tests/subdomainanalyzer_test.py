@@ -39,6 +39,27 @@ class TestSubDomainAnalyzer(unittest.TestCase):
 
         analyzer = SubDomainAnalyzer(self.action, "mytest")
         self.assertFalse(analyzer.match(update))
+    
+    def test_single_word_contained(self):
+        """Check if the analyzer matches substrings if not in exact mode"""
+        analyzer = SubDomainAnalyzer(self.action, "test", exact_match=False)
+        update = mock.Mock()
+        update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]
+        matches = analyzer.match(update)
+        self.assertTrue(matches)
+        self.assertEqual(3, len(matches))
+        self.assertIn("test.example.com", matches)
+        self.assertIn("test.beispiel.de", matches)
+        self.assertIn("test2.example.com", matches)
+
+        analyzer = SubDomainAnalyzer(self.action, "test2")
+        matches = analyzer.match(update)
+        self.assertTrue(matches)
+        self.assertEqual(1, len(matches))
+        self.assertEqual("test2.example.com", matches[0])
+
+        analyzer = SubDomainAnalyzer(self.action, "mytest")
+        self.assertFalse(analyzer.match(update))
 
     def test_empty_string(self):
         """Check if the analyzer matches domains without subdomains if the subdomain param is an empty string"""
