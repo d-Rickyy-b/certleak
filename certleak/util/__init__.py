@@ -5,4 +5,4 @@ from .request import Request
 from .templatingengine import TemplatingEngine
 from .threadingutils import join_threads, start_thread
 
-__all__ = ["listify", "start_thread", "join_threads", "DictWrapper", "TemplatingEngine", "Request"]
+__all__ = ["DictWrapper", "Request", "TemplatingEngine", "join_threads", "listify", "start_thread"]

@@ -8,4 +8,4 @@ from .certstreamdata.message import Message
 from .certstreamdata.update import Update
 from .certstreamwrapper import CertstreamWrapper
 
-__all__ = ["CertLeak", "Message", "Update", "ActionHandler", "AnalyzerHandler", "CertstreamWrapper"]
+__all__ = ["ActionHandler", "AnalyzerHandler", "CertLeak", "CertstreamWrapper", "Message", "Update"]

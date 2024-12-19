@@ -7,4 +7,4 @@ from .message import Message
 from .subject import Subject
 from .update import Update
 
-__all__ = ["CertstreamObject", "LeafCert", "Subject", "Extensions", "Chain", "Update", "Message"]
+__all__ = ["CertstreamObject", "Chain", "Extensions", "LeafCert", "Message", "Subject", "Update"]
