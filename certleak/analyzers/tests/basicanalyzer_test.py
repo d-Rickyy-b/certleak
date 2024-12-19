@@ -114,5 +114,5 @@ class TestBasicAnalyzer(unittest.TestCase):
             self.analyzer._check_action(action)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

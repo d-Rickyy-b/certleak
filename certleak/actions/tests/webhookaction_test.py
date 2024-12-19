@@ -69,5 +69,5 @@ class TestWebhookAction(unittest.TestCase):
         request_object_mock.post.assert_not_called()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

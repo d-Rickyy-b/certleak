@@ -42,5 +42,5 @@ class TestSaveJSONAction(unittest.TestCase):
         open_mock().__enter__().write.assert_called_with("json content!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
