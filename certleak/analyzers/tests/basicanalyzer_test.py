@@ -7,7 +7,6 @@ from certleak.errors import InvalidActionError
 
 
 class TestBasicAnalyzer(unittest.TestCase):
-
     def setUp(self):
         self.analyzer = BasicAnalyzer(None)
 

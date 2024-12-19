@@ -1,4 +1,3 @@
-
 import json
 import pathlib
 import unittest
@@ -8,7 +7,6 @@ from certleak.util.templatingengine import TemplatingEngine
 
 
 class TestTemplatingEngine(unittest.TestCase):
-
     def setUp(self):
         """Sets up the test case"""
         self.update = Mock()
@@ -69,11 +67,7 @@ class TestTemplatingEngine(unittest.TestCase):
 
     def test__flatten_update_dict(self):
         """Check if flattening dicts works as intended"""
-        d = {"test": "asdf",
-             "nested": {"inner": "content", "another": "other content"},
-             "double_nested": {"inside_double_nested": {"totally_inner": "final"}},
-             "outer": "yes"
-             }
+        d = {"test": "asdf", "nested": {"inner": "content", "another": "other content"}, "double_nested": {"inside_double_nested": {"totally_inner": "final"}}, "outer": "yes"}
         new_d = TemplatingEngine._flatten_update_dict(d, parent_key="", sep="__")
 
         # Make sure new_d contains 5 elements on the root level
@@ -100,11 +94,7 @@ class TestTemplatingEngine(unittest.TestCase):
 
     def test__flatten_update_dict_separator(self):
         """Check if changing separators works as intended"""
-        d = {"test": "asdf",
-             "nested": {"inner": "content", "another": "other content"},
-             "double_nested": {"inside_double_nested": {"totally_inner": "final"}},
-             "outer": "yes"
-             }
+        d = {"test": "asdf", "nested": {"inner": "content", "another": "other content"}, "double_nested": {"inside_double_nested": {"totally_inner": "final"}}, "outer": "yes"}
         new_d = TemplatingEngine._flatten_update_dict(d, parent_key="", sep="###")
 
         # Make sure new_d contains 5 elements on the root level

@@ -54,16 +54,18 @@ class LeafCert(CertstreamObject):
         signature_algorithm = data.get("signature_algorithm")
         as_der = data.get("as_der")
 
-        return cls(subject=subject,
-                   issuer=issuer,
-                   extensions=extensions,
-                   not_before=not_before,
-                   not_after=not_after,
-                   serial_number=serial_number,
-                   fingerprint=fingerprint,
-                   signature_algorithm=signature_algorithm,
-                   all_domains=all_domains,
-                   as_der=as_der)
+        return cls(
+            subject=subject,
+            issuer=issuer,
+            extensions=extensions,
+            not_before=not_before,
+            not_after=not_after,
+            serial_number=serial_number,
+            fingerprint=fingerprint,
+            signature_algorithm=signature_algorithm,
+            all_domains=all_domains,
+            as_der=as_der,
+        )
 
     def __repr__(self):
         return f"(subject: {self.subject}, issuer: {self.issuer}, extensions: {self.extensions}, not_before: {self.not_before}, not_after: {self.not_after}, serial_number: {self.serial_number}, fingerprint: {self.fingerprint}, all_domains: {self.all_domains}, as_der: {self.as_der})"

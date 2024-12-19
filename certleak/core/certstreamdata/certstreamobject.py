@@ -1,5 +1,3 @@
-
-
 class CertstreamObject:
     """Base class for all the certstream data classes"""
 

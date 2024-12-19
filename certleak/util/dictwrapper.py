@@ -1,5 +1,3 @@
-
-
 # https://stackoverflow.com/questions/19799609/leaving-values-blank-if-not-passed-in-str-format
 class DictWrapper(dict):
     """

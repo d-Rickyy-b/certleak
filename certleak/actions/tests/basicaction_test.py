@@ -5,7 +5,6 @@ from certleak.actions import BasicAction
 
 
 class TestBasicAction(unittest.TestCase):
-
     def setUp(self):
         self.action = BasicAction()
 

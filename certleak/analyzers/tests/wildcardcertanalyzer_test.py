@@ -1,4 +1,3 @@
-
 import unittest
 from unittest.mock import Mock, patch
 
@@ -6,7 +5,6 @@ from certleak.analyzers import WildcardCertAnalyzer
 
 
 class WildcardCertAnalyzerTest(unittest.TestCase):
-
     def setUp(self):
         """Sets up the test case"""
         self.analyzer = WildcardCertAnalyzer(None)

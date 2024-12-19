@@ -4,8 +4,18 @@ from .certstreamobject import CertstreamObject
 class Extensions(CertstreamObject):
     """Data class representing the certificate extensions"""
 
-    def __init__(self, keyUsage, extendedKeyUsage, basicConstraints, subjectKeyIdentifier, authorityKeyIdentifier, authorityInfoAccess, subjectAltName,
-                 certificatePolicies, ctlSignedCertificateTimestamp):
+    def __init__(
+        self,
+        keyUsage,
+        extendedKeyUsage,
+        basicConstraints,
+        subjectKeyIdentifier,
+        authorityKeyIdentifier,
+        authorityInfoAccess,
+        subjectAltName,
+        certificatePolicies,
+        ctlSignedCertificateTimestamp,
+    ):
         """
         Data class representing the certificate extensions
         :param keyUsage: keyUsage extension
@@ -50,17 +60,21 @@ class Extensions(CertstreamObject):
         certificatePolicies = data.get("certificatePolicies")
         ctlSignedCertificateTimestamp = data.get("ctlSignedCertificateTimestamp")
 
-        return cls(keyUsage=keyUsage,
-                   extendedKeyUsage=extendedKeyUsage,
-                   basicConstraints=basicConstraints,
-                   subjectKeyIdentifier=subjectKeyIdentifier,
-                   authorityKeyIdentifier=authorityKeyIdentifier,
-                   authorityInfoAccess=authorityInfoAccess,
-                   subjectAltName=subjectAltName,
-                   certificatePolicies=certificatePolicies,
-                   ctlSignedCertificateTimestamp=ctlSignedCertificateTimestamp)
+        return cls(
+            keyUsage=keyUsage,
+            extendedKeyUsage=extendedKeyUsage,
+            basicConstraints=basicConstraints,
+            subjectKeyIdentifier=subjectKeyIdentifier,
+            authorityKeyIdentifier=authorityKeyIdentifier,
+            authorityInfoAccess=authorityInfoAccess,
+            subjectAltName=subjectAltName,
+            certificatePolicies=certificatePolicies,
+            ctlSignedCertificateTimestamp=ctlSignedCertificateTimestamp,
+        )
 
     def __repr__(self):
-        return f"keyUsage: {self.keyUsage}, extendedKeyUsage: {self.extendedKeyUsage}, basicContstraints: {self.basicConstraints}, subjectKeyIdentifier: " \
-               f"{self.subjectKeyIdentifier}, authorityKeyIdentifier: {self.authorityKeyIdentifier}, subjectAltName: {self.subjectAltName}, " \
-               f"certificatePolicies: {self.certificatePolicies}, ctlSignedCertificateTimestamp: {self.ctlSignedCertificateTimestamp}"
+        return (
+            f"keyUsage: {self.keyUsage}, extendedKeyUsage: {self.extendedKeyUsage}, basicContstraints: {self.basicConstraints}, subjectKeyIdentifier: "
+            f"{self.subjectKeyIdentifier}, authorityKeyIdentifier: {self.authorityKeyIdentifier}, subjectAltName: {self.subjectAltName}, "
+            f"certificatePolicies: {self.certificatePolicies}, ctlSignedCertificateTimestamp: {self.ctlSignedCertificateTimestamp}"
+        )

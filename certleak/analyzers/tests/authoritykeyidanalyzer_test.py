@@ -6,7 +6,6 @@ from certleak.analyzers import AuthorityKeyIDAnalyzer
 
 
 class TestAuthorityKeyIDAnalyzer(unittest.TestCase):
-
     def setUp(self):
         self.analyzer = AuthorityKeyIDAnalyzer(None, "keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6")
         self.update = mock.Mock()

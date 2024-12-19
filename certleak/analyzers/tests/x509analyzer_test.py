@@ -1,4 +1,3 @@
-
 import unittest
 from unittest.mock import Mock
 
@@ -6,7 +5,6 @@ from certleak.analyzers import X509Analyzer
 
 
 class X509AnalyzerTest(unittest.TestCase):
-
     def setUp(self):
         """Sets up the test case"""
         self.analyzer = X509Analyzer(None)

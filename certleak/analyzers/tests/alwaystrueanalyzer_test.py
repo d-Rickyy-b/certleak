@@ -6,7 +6,6 @@ from certleak.analyzers import AlwaysTrueAnalyzer
 
 
 class TestAlwaysTrueAnalyzer(unittest.TestCase):
-
     def setUp(self):
         self.analyzer = AlwaysTrueAnalyzer(None)
         self.update = mock.Mock()

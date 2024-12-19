@@ -49,21 +49,16 @@ class Update(CertstreamObject):
         source = data.get("source")
         chain = Chain.from_dict(data.get("chain"))
 
-        return cls(update_type=update_type,
-                   leaf_cert=leaf_cert,
-                   cert_index=cert_index,
-                   cert_link=cert_link,
-                   seen=seen,
-                   source=source,
-                   chain=chain,
-                   raw_dict=raw_data)
+        return cls(update_type=update_type, leaf_cert=leaf_cert, cert_index=cert_index, cert_link=cert_link, seen=seen, source=source, chain=chain, raw_dict=raw_data)
 
     def to_dict(self):
         return self.raw_dict
 
     def __repr__(self):
-        return f"(update_type: {self.update_type}, leaf_cert: {self.leaf_cert}, chain: {self.cert_index}, cert_index: {self.cert_link}, seen: {self.seen}, " \
-               f"source: {self.source}, chain: {self.chain})"
+        return (
+            f"(update_type: {self.update_type}, leaf_cert: {self.leaf_cert}, chain: {self.cert_index}, cert_index: {self.cert_link}, seen: {self.seen}, "
+            f"source: {self.source}, chain: {self.chain})"
+        )
 
     # def __eq__(self, other):
     #     try:

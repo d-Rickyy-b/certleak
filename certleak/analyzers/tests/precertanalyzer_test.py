@@ -1,4 +1,3 @@
-
 import unittest
 from unittest.mock import Mock
 
@@ -7,7 +6,6 @@ from certleak.analyzers import PreCertAnalyzer
 
 
 class PreCertAnalyzerTest(unittest.TestCase):
-
     def setUp(self):
         """Sets up the test case"""
         self.analyzer = PreCertAnalyzer(None)

@@ -9,7 +9,6 @@ from certleak.util import join_threads, start_thread
 
 
 class CertstreamWrapper:
-
     def __init__(self, update_queue, certstream_url, exception_event):
         """
         The CertstreamWrapper is a wrapper around the python certstream module, allowing it to run in its own thread and filling new cert updates into a queue.
@@ -68,9 +67,9 @@ class CertstreamWrapper:
         time_passed = int(time.time()) - self.last_info
         if time_passed >= 60:
             format_str = "Processed {0} updates ({1} unique domains) during the last {2} seconds. {3:.1f} domains/s, {4:.1f} certs/s"
-            formatted_str = format_str.format(self.update_counter,
-                                              len(self.processed_domains), time_passed,
-                                              len(self.processed_domains) / time_passed, self.update_counter / time_passed)
+            formatted_str = format_str.format(
+                self.update_counter, len(self.processed_domains), time_passed, len(self.processed_domains) / time_passed, self.update_counter / time_passed
+            )
             self.logger.info(formatted_str)
 
             self.logger.info("Queue length: %s", self.update_queue.qsize())

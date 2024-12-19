@@ -1,4 +1,3 @@
-
 from .certstreamobject import CertstreamObject
 from .chain import Chain
 from .extensions import Extensions

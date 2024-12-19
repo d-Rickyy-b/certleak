@@ -6,7 +6,6 @@ from certleak.analyzers import DomainRegexAnalyzer
 
 
 class TestDomainRegexAnalyzer(unittest.TestCase):
-
     def setUp(self):
         """Sets up the test case"""
         self.update = Mock()

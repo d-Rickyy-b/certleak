@@ -10,7 +10,6 @@ from certleak.core.certstreamwrapper import CertstreamWrapper
 
 
 class CertLeak:
-
     def __init__(self, certstream_url="wss://certstream.calidog.io/"):
         """
         Basic CertLeak object, handling the connection to the certstream network and all the analyzers and actions

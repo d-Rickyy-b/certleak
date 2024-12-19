@@ -1,5 +1,3 @@
-
-
 class CertleakError(Exception):
     """Representation of a certleak error object."""
 

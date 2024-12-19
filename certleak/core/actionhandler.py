@@ -1,4 +1,3 @@
-
 import logging
 from queue import Empty, Queue
 from threading import Event, Lock
@@ -74,8 +73,7 @@ class ActionHandler:
     def _perform_action_wrapper(self, action, update, analyzer, matches):
         """A wrapper around the perform method to catch exceptions"""
         try:
-            self.logger.debug(
-                "Performing action '%s' on update '%s' matched by analyzer '%s'!", action.name, update.all_domains, analyzer.identifier)
+            self.logger.debug("Performing action '%s' on update '%s' matched by analyzer '%s'!", action.name, update.all_domains, analyzer.identifier)
             action.perform(update, analyzer.identifier, matches)
         except Exception as e:
             self.logger.error("While performing the action '%s' the following exception occurred: '%s'", action.name, e)

@@ -1,4 +1,3 @@
-
 import dnstwist
 
 from certleak.util import listify

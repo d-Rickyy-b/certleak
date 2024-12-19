@@ -1,4 +1,3 @@
-
 from .basicanalyzer import BasicAnalyzer
 
 

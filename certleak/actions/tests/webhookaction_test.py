@@ -5,7 +5,6 @@ from certleak.actions.webhookaction import WebhookAction
 
 
 class TestWebhookAction(unittest.TestCase):
-
     def setUp(self):
         self.url = "https://example.com"
         self.action = WebhookAction(url=self.url)

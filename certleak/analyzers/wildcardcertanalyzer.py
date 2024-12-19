@@ -1,4 +1,3 @@
-
 import tldextract
 
 from certleak.util import listify
