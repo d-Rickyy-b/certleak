@@ -3,9 +3,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class CAFingerprintAnalyzer(BasicAnalyzer):
-    """
-    Analyzer for finding certificate updates that are signed by a CA with a specified fingerprint
-    """
+    """Analyzer for finding certificate updates that are signed by a CA with a specified fingerprint"""
 
     name = "CAFingerprintAnalyzer"
 

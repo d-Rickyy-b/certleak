@@ -3,9 +3,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class LetsEncryptAnalyzer(BasicAnalyzer):
-    """
-    Analyzer for finding certificate updates that are signed by Let's Encrypt
-    """
+    """Analyzer for finding certificate updates that are signed by Let's Encrypt"""
 
     name = "LetsEncryptAnalyzer"
 

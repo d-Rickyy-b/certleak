@@ -3,9 +3,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class PreCertAnalyzer(BasicAnalyzer):
-    """
-    Analyzer for finding pre certificate updates
-    """
+    """Analyzer for finding pre certificate updates"""
 
     name = "PreCertAnalyzer"
 

@@ -4,9 +4,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class RegexDomainAnalyzer(BasicAnalyzer):
-    """
-    Analyzer for using regex to find certificate updates for domains matching the pattern
-    """
+    """Analyzer for using regex to find certificate updates for domains matching the pattern"""
 
     name = "RegexDomainAnalyzer"
 

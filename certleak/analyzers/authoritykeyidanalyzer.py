@@ -3,9 +3,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class AuthorityKeyIDAnalyzer(BasicAnalyzer):
-    """
-    Analyzer for finding certificate updates that are signed by a CA with a specified subject key identifier
-    """
+    """Analyzer for finding certificate updates that are signed by a CA with a specified subject key identifier"""
 
     name = "AuthorityKeyIDAnalyzer"
 

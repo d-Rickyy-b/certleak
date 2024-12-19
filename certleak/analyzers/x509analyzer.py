@@ -3,9 +3,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class X509Analyzer(BasicAnalyzer):
-    """
-    Analyzer for finding X509 certificate updates
-    """
+    """Analyzer for finding X509 certificate updates"""
 
     name = "X509Analyzer"
 
