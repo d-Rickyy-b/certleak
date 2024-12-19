@@ -42,7 +42,7 @@ class LeafCert(CertstreamObject):
         if not data:
             return None
 
-        data = super(LeafCert, cls).from_dict(data)
+        data = super().from_dict(data)
         subject = Subject.from_dict(data.get("subject"))
         issuer = Subject.from_dict(data.get("issuer"))
         extensions = Extensions.from_dict(data.get("extensions"))

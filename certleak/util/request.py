@@ -16,7 +16,7 @@ class Request:
         if Request._instance is None:
             with Request._lock:
                 if Request._instance is None:
-                    Request._instance = super(Request, cls).__new__(cls)
+                    Request._instance = super().__new__(cls)
         return Request._instance
 
     def __init__(self, proxies=None, headers=None):

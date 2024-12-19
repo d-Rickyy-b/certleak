@@ -39,7 +39,7 @@ class Extensions(CertstreamObject):
         if not data:
             return None
 
-        data = super(Extensions, cls).from_dict(data)
+        data = super().from_dict(data)
         keyUsage = data.get("keyUsage")
         extendedKeyUsage = data.get("extendedKeyUsage")
         basicConstraints = data.get("basicConstraints")

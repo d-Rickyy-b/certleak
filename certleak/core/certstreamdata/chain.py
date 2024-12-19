@@ -24,7 +24,7 @@ class Chain(CertstreamObject):
         if not data:
             return None
 
-        data = super(Chain, cls).from_dict(data)
+        data = super().from_dict(data)
         cert_list = []
 
         for cert in data:

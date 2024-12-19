@@ -35,7 +35,7 @@ class Subject(CertstreamObject):
         if not data:
             return None
 
-        data = super(Subject, cls).from_dict(data)
+        data = super().from_dict(data)
         aggregated = data.get("aggregated")
         c = data.get("c")
         st = data.get("ST")

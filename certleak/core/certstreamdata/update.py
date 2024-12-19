@@ -40,7 +40,7 @@ class Update(CertstreamObject):
             return None
 
         raw_data = data.copy()
-        data = super(Update, cls).from_dict(data)
+        data = super().from_dict(data)
         update_type = data.get("update_type")
         leaf_cert = LeafCert.from_dict(data.get("leaf_cert"))
         cert_index = data.get("cert_index")

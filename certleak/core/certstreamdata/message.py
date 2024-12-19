@@ -25,7 +25,7 @@ class Message(CertstreamObject):
         if not data:
             return None
 
-        data = super(Message, cls).from_dict(data)
+        data = super().from_dict(data)
         message_type = data.get("message_type")
         update = Update.from_dict(data.get("data"))
 
