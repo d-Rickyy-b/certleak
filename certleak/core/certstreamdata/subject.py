@@ -48,5 +48,4 @@ class Subject(CertstreamObject):
         return cls(aggregated=aggregated, c=c, st=st, l=l, o=o, ou=ou, cn=cn, email_address=email_address)
 
     def __repr__(self):
-        return "Subject(C='%s', ST='%s', L='%s', O='%s', OU='%s', CN='%s' | aggregated='%s')" % (self.C, self.ST, self.L, self.O, self.OU, self.CN,
-                                                                                                 self.aggregated)
+        return f"Subject(C='{self.C}', ST='{self.ST}', L='{self.L}', O='{self.O}', OU='{self.OU}', CN='{self.CN}' | aggregated='{self.aggregated}')"
