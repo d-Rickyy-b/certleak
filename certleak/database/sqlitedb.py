@@ -32,7 +32,7 @@ class SQLiteDB(AbstractDB):
             self.db.text_factory = lambda x: str(x, "utf-8", "ignore")
             self.cursor = self.db.cursor()
             self._create_tables()
-        except Exception as e:
+        except Exception:
             self.logger.exception("An exception occurred when initializing the database")
             raise
 

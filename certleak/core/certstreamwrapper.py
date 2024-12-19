@@ -36,7 +36,7 @@ class CertstreamWrapper:
     def _handle_message(self, message, context):
         try:
             self._fill_queue(message, context)
-        except Exception as e:
+        except Exception:
             logging.exception("Exception while handling certstream message!")
 
     def _fill_queue(self, message, context):
