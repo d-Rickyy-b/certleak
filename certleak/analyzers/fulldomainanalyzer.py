@@ -36,9 +36,8 @@ class FullDomainAnalyzer(BasicAnalyzer):
                     # If we only want exact matches, we check on equality
                     if word == full_domain:
                         matches.append(full_domain)
-                else:
-                    # If we want partial matches as well, we check if it contains the word
-                    if word in full_domain:
-                        matches.append(full_domain)
+                # If we want partial matches as well, we check if it contains the word
+                elif word in full_domain:
+                    matches.append(full_domain)
 
         return list(set(matches))
