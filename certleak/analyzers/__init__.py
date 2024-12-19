@@ -12,5 +12,18 @@ from .tldanalyzer import TLDAnalyzer
 from .wildcardcertanalyzer import WildcardCertAnalyzer
 from .x509analyzer import X509Analyzer
 
-__all__ = ["BasicAnalyzer", "TLDAnalyzer", "FullDomainAnalyzer", "AlwaysTrueAnalyzer", "WildcardCertAnalyzer", "X509Analyzer", "PreCertAnalyzer",
-           "LetsEncryptAnalyzer", "RegexDomainAnalyzer", "DNStwistAnalyzer", "DomainRegexAnalyzer", "SubDomainAnalyzer", AuthorityKeyIDAnalyzer]
+__all__ = [
+           "AlwaysTrueAnalyzer",
+           "AuthorityKeyIDAnalyzer",
+           "BasicAnalyzer",
+           "DNStwistAnalyzer",
+           "DomainRegexAnalyzer",
+           "FullDomainAnalyzer",
+           "LetsEncryptAnalyzer",
+           "PreCertAnalyzer",
+           "RegexDomainAnalyzer",
+           "SubDomainAnalyzer",
+           "TLDAnalyzer",
+           "WildcardCertAnalyzer",
+           "X509Analyzer",
+]
