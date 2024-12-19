@@ -1,6 +1,6 @@
 
 
-class AbstractDB(object):
+class AbstractDB:
 
     def __init__(self):
         pass

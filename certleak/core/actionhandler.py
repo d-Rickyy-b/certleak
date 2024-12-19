@@ -7,7 +7,7 @@ from time import sleep
 from certleak.util import join_threads, start_thread
 
 
-class ActionHandler(object):
+class ActionHandler:
     """Handler to execute all the actions, if an analyzer matches an update"""
 
     def __init__(self, action_queue=None, exception_event=None, stop_event=None):

@@ -7,7 +7,7 @@ from time import sleep
 from certleak.util import join_threads, start_thread
 
 
-class AnalyzerHandler(object):
+class AnalyzerHandler:
     """The AnalyzerHandler dispatches certificate updates to the analyzers"""
 
     def __init__(self, update_queue, action_queue=None, exception_event=None):

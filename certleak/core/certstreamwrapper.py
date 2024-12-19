@@ -8,7 +8,7 @@ from certleak.core.certstreamdata.message import Message
 from certleak.util import join_threads, start_thread
 
 
-class CertstreamWrapper(object):
+class CertstreamWrapper:
 
     def __init__(self, update_queue, certstream_url, exception_event):
         """

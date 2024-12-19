@@ -5,7 +5,7 @@ from certleak.errors import InvalidActionError
 from certleak.util import listify
 
 
-class BasicAnalyzer(object):
+class BasicAnalyzer:
     """Basic analyzer class"""
 
     name = "BasicAnalyzer"

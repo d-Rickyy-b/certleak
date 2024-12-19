@@ -6,7 +6,7 @@ from string import Template
 from certleak.util import DictWrapper
 
 
-class TemplatingEngine(object):
+class TemplatingEngine:
     """Wrapper class around the python templating feature"""
 
     @staticmethod

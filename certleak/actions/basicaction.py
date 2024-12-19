@@ -1,7 +1,7 @@
 import logging
 
 
-class BasicAction(object):
+class BasicAction:
     """Base class for actions which can be performed on updates"""
 
     name = "BasicAction"
