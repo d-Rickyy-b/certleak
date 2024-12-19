@@ -1,12 +1,13 @@
 [![certleak logo created by https://t.me/AboutTheDot](https://raw.githubusercontent.com/d-Rickyy-b/certleak/master/docs/certleak_logo.png)](https://github.com/d-Rickyy-b/certleak)
 
 # certleak - Cert-Monitoring Python Framework
+
 [![Run tests and lint](https://github.com/d-Rickyy-b/certleak/workflows/Run%20tests%20and%20lint/badge.svg)](https://github.com/d-Rickyy-b/certleak/actions?query=workflow%3A%22Run+tests+and+lint%22)
 [![PyPI version](https://badge.fury.io/py/certleak.svg)](https://pypi.org/project/certleak/)
 [![Coverage Status](https://coveralls.io/repos/github/d-Rickyy-b/certleak/badge.svg?branch=master)](https://coveralls.io/github/d-Rickyy-b/certleak?branch=master)
 
 Certleak is a tool to monitor and analyze TLS certificates as they are issued.
-It is heavily inspired by [Phishing Catcher](https://github.com/x0rz/phishing_catcher) by [x0rz](https://twitter.com/x0rz). 
+It is heavily inspired by [Phishing Catcher](https://github.com/x0rz/phishing_catcher) by [x0rz](https://twitter.com/x0rz).
 
 It utilizes the [Certificate Transparency Network](https://www.certificate-transparency.org/what-is-ct), which is an ecosystem for publicly monitoring issuance of TLS certificates.
 
@@ -18,18 +19,21 @@ Since certleak uses certstream, it only enables you to analyze live data.
 There is no way to use this tool to analyze certificates that have been issued in the past or while being offline.
 
 ## Extensibility
+
 Creating new analyzers or actions is as easy as creating a new python file.
 Certleak is built with extensibility in mind.
 Check the [analyzer docs](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/analyzers/README.md) as well as the [actions docs](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/actions/README.md).  
 
-
 ## Installation
+
 Simply use pip to install this tool.
-```
+
+```bash
 pip install certleak
 ```
 
 ## Usage
+
 After downloading and installing the package, you only need to create a small python script in which you import certleak and set up the analyzers and the belonging actions.
 Below you'll find an example configuration. Keep in mind that it's fully up to you what analyzers you want to add and which actions you want to be executed.
 
@@ -76,9 +80,10 @@ certleak.add_analyzer(letsencrypt_analyzer)
 certleak.start()
 ```
 
-You can find [full example files](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/examples) in this repo as well. 
+You can find [full example files](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/examples) in this repo as well.
 
 ### License
+
 This tool is released under the MIT license.
 
 If you found this tool helpful and want to support me, drop me a coffee at the link below.
