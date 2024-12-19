@@ -1,0 +1,126 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "certleak"
+description = "Python tool to monitor and analyze TLS certificates as they are issued via certstream."
+authors = [
+    {name = "d-Rickyy-b", email = "certleak@rico-j.de"},
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+#version = "0.0.1"
+dynamic = ["version"]
+keywords = ["python", "certificate", "tls", "osint", "framework"]
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Security",
+    "Topic :: Internet",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
+dependencies = [
+    "certstream>=1.12",
+    "dnstwist",
+    "requests",
+    "tldextract",
+]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
+[project.urls]
+Homepage = "https://github.com/d-Rickyy-b/certleak"
+Issues = "https://github.com/d-Rickyy-b/certleak/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "certleak.version.__version__"}
+
+[project.scripts]
+rephish = "certleak.certleak:main"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 180
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "BLE001", # Do not catch blind exception: `Exception`
+    "E501", # Line too long
+    "UP012",
+    "UP015",
+    "G004",
+    "COM812",
+    "T201",
+    "PLR1722",
+    "RET505",
+    "RET508",
+    "SLF001",
+    "PTH123",
+    "FBT001",
+    "FBT002",
+    "FBT003",
+    "PLR0911",
+    "D107",
+    "D213", # multi-line-summary-second-line
+    "D203", # one-blank-line-before-class
+    "ERA001", # Found commented-out code
+    "FIX", # Disable all flake8-fixme warnings
+    "TD", # Disable all flake8-todos warnings
+    "SIM108", # Use ternary operator
+    "PT009", # pytest-unittest-assertion
+]
+
+[tool.ruff.format]
+# Use `\n` line endings for all files
+line-ending = "lf"
+
+[tool.ruff.lint.per-file-ignores]
+"certleak/core/certstreamdata/subject.py" = [
+    "E741", # Magic value used in comparison
+    ]
+"certleak/core/certstreamdata/extensions.py" = [
+    "N803", # Argument name should be lowercase
+    "N806", # Variable in function should be lowercase
+]
+"**_test.py" = [
+    "N802", # Function name should be lowercase
+]
