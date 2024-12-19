@@ -18,7 +18,4 @@ class CAFingerprintAnalyzer(BasicAnalyzer):
 
     def match(self, update):
         # TODO chain doesn't work!
-        for cert in update.chain:
-            if cert.extensions.basicConstraints == "CA:TRUE" and cert.fingerprint.lower() == self.fingerprint.lower():
-                return True
-        return False
+        return any(cert.extensions.basicConstraints == "CA:TRUE" and cert.fingerprint.lower() == self.fingerprint.lower() for cert in update.chain)

@@ -60,8 +60,5 @@ class DNStwistAnalyzer(BasicAnalyzer):
         if not update or not update.all_domains:
             return False
 
-        for domain in update.all_domains:
-            if domain in self.generated_domains:
-                # TODO implement "contained in" feature - e.g. for subdomains
-                return True
-        return False
+        return any(domain in self.generated_domains for domain in update.all_domains)
+        # TODO implement "contained in" feature - e.g. for subdomains
