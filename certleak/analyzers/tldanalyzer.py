@@ -7,6 +7,7 @@ from .basicanalyzer import BasicAnalyzer
 
 class TLDAnalyzer(BasicAnalyzer):
     """Analyzer to check for certain TLDs"""
+
     name = "TLDAnalyzer"
 
     def __init__(self, actions, filtered_tlds, blacklist=None):

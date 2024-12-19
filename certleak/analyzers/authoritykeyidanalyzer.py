@@ -6,6 +6,7 @@ class AuthorityKeyIDAnalyzer(BasicAnalyzer):
     """
     Analyzer for finding certificate updates that are signed by a CA with a specified subject key identifier
     """
+
     name = "AuthorityKeyIDAnalyzer"
 
     def __init__(self, actions, authority_key_id):

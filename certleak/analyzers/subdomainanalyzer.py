@@ -9,6 +9,7 @@ from .basicanalyzer import BasicAnalyzer
 
 class SubDomainAnalyzer(BasicAnalyzer):
     """Analyzer to match subdomains containing certain strings"""
+
     name = "SubDomainAnalyzer"
     logger = logging.getLogger(__name__)
 

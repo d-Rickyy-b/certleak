@@ -7,6 +7,7 @@ from .basicaction import BasicAction
 
 class WebhookAction(BasicAction):
     """Action to perform a Webhook on a matched update"""
+
     name = "WebhookAction"
     logger = logging.getLogger(__name__)
 

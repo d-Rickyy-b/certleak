@@ -7,6 +7,7 @@ from .basicaction import BasicAction
 
 class LogAction(BasicAction):
     """Action to log a cert update to console"""
+
     name = "LogAction"
 
     def __init__(self, level, template=None):

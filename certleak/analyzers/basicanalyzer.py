@@ -7,6 +7,7 @@ from certleak.util import listify
 
 class BasicAnalyzer(object):
     """Basic analyzer class"""
+
     name = "BasicAnalyzer"
 
     def __init__(self, actions, identifier=None):
@@ -69,6 +70,7 @@ class BasicAnalyzer(object):
 
 class MergedAnalyzer(BasicAnalyzer):
     """Merged analyzer class"""
+
     name = "MergedAnalyzer"
 
     def __init__(self, base_analyzer, and_analyzer=None, or_analyzer=None, not_analyzer=None):

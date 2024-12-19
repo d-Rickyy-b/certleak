@@ -5,6 +5,7 @@ from .basicanalyzer import BasicAnalyzer
 
 class DomainRegexAnalyzer(BasicAnalyzer):
     """Analyzer for matching certificate domains against a regex"""
+
     name = "DomainRegexAnalyzer"
 
     def __init__(self, actions, pattern, flags=0):

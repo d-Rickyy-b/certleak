@@ -3,6 +3,7 @@ from .basicanalyzer import BasicAnalyzer
 
 class AlwaysTrueAnalyzer(BasicAnalyzer):
     """Analyzer which always matches an certificate update to perform actions on every certificate update"""
+
     name = "AlwaysTrueAnalyzer"
 
     def __init__(self, actions):

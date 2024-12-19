@@ -6,6 +6,7 @@ class X509Analyzer(BasicAnalyzer):
     """
     Analyzer for finding X509 certificate updates
     """
+
     name = "X509Analyzer"
 
     def __init__(self, actions=None):

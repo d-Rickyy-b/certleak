@@ -7,6 +7,7 @@ from .basicaction import BasicAction
 
 class SaveFileAction(BasicAction):
     """Action to save each certificate update as a file named '<update.cert_index>.txt'"""
+
     name = "SaveFileAction"
 
     def __init__(self, path, file_ending=".txt", template=None):

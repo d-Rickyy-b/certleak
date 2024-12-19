@@ -10,6 +10,7 @@ class WildcardCertAnalyzer(BasicAnalyzer):
     """
     Analyzer for finding wildcard certificates
     """
+
     name = "WildcardCertAnalyzer"
 
     def __init__(self, actions, blacklist=None):
