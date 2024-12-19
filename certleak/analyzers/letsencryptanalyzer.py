@@ -11,4 +11,4 @@ class LetsEncryptAnalyzer(BasicAnalyzer):
         super().__init__(actions)
 
     def match(self, update):
-        return "Let's Encrypt" == update.leaf_cert.issuer.O
+        return update.leaf_cert.issuer.O == "Let's Encrypt"

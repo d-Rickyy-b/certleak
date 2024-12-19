@@ -47,10 +47,7 @@ class SaveFileAction(BasicAction):
 
         self.file_ending = self._remove_prefix(self.file_ending, ".")
 
-        if self.file_ending == "":
-            file_name = str(update.cert_index)
-        else:
-            file_name = f"{update.cert_index}.{self.file_ending}"
+        file_name = str(update.cert_index) if self.file_ending == "" else f"{update.cert_index}.{self.file_ending}"
 
         file_path = self.path / file_name
         content = self.get_file_content(update, analyzer_name, matches)
