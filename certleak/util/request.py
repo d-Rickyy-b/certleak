@@ -39,7 +39,7 @@ class Request:
             headers.update(self.headers)
 
         try:
-            response = self.session.request(headers=headers, proxies=self.proxies, data=data, timeout=timeout, *args, **kwargs)
+            response = self.session.request(*args, headers=headers, proxies=self.proxies, data=data, timeout=timeout, **kwargs)
             response_data = response.content.decode("utf-8")
         except Timeout:
             url = kwargs.get("url")
