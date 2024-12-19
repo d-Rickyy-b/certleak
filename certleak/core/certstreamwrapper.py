@@ -86,14 +86,14 @@ class CertstreamWrapper(object):
         Error handler for the certstream module
         :return:
         """
-        self.logger.error("An error occurred: {0}".format(ex))
+        self.logger.error(f"An error occurred: {ex}")
 
     def _on_close(self, ex):
         """
         Error handler for the certstream module
         :return:
         """
-        self.logger.error("An error occurred: ex: {0}".format(ex))
+        self.logger.error(f"An error occurred: ex: {ex}")
 
     def _run(self):
         """

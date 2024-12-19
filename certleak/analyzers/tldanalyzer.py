@@ -34,6 +34,6 @@ class TLDAnalyzer(BasicAnalyzer):
                     if extract_result.suffix == tld and not any(word in full_domain for word in self.blacklist):
                         matches.append(full_domain)
             except Exception as e:
-                self.logger.error("During matching of an update, the following exception occurred: {}".format(e))
+                self.logger.error(f"During matching of an update, the following exception occurred: {e}")
 
         return set(matches)

@@ -50,12 +50,12 @@ class SaveFileAction(BasicAction):
         if self.file_ending == "":
             file_name = str(update.cert_index)
         else:
-            file_name = "{0}.{1}".format(update.cert_index, self.file_ending)
+            file_name = f"{update.cert_index}.{self.file_ending}"
 
         file_path = self.path / file_name
         content = self.get_file_content(update, analyzer_name, matches)
 
-        self.logger.debug("Writing file at '{0}'".format(file_path))
+        self.logger.debug(f"Writing file at '{file_path}'")
 
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)

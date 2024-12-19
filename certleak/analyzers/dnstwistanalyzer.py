@@ -27,12 +27,12 @@ class DNStwistAnalyzer(BasicAnalyzer):
         self.exceptions.append(domainname)
 
         # Generate pot. phishing domain names via dnstwist
-        self.logger.info("Generating phishing domains via dnstwist for domain '{0}'".format(domainname))
+        self.logger.info(f"Generating phishing domains via dnstwist for domain '{domainname}'")
         fuzz = dnstwist.Fuzzer(domainname)
         fuzz.generate()
         res = fuzz.domains
 
-        self.logger.info("Generated {0} permutated domains".format(len(res)))
+        self.logger.info(f"Generated {len(res)} permutated domains")
 
         # dnstwist returns a list of dicts containing "fuzzer" and "domain-name" as elements
         # We need to generate a set of domain names out of it
@@ -47,9 +47,9 @@ class DNStwistAnalyzer(BasicAnalyzer):
             try:
                 self.generated_domains.remove(exception_domain)
             except KeyError:
-                self.logger.debug("Could not find domain {0} in dnstwist output!".format(exception_domain))
+                self.logger.debug(f"Could not find domain {exception_domain} in dnstwist output!")
 
-        self.logger.info("Using {0} permutated domains".format(len(self.generated_domains)))
+        self.logger.info(f"Using {len(self.generated_domains)} permutated domains")
 
     def match(self, update):
         """Check if any of the certificate domain names are contained in the list of generated pot. phishing domains

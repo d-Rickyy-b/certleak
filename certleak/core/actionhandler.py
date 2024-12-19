@@ -75,7 +75,7 @@ class ActionHandler(object):
         """A wrapper around the perform method to catch exceptions"""
         try:
             self.logger.debug(
-                "Performing action '{0}' on update '{1}' matched by analyzer '{2}'!".format(action.name, update.all_domains, analyzer.identifier))
+                f"Performing action '{action.name}' on update '{update.all_domains}' matched by analyzer '{analyzer.identifier}'!")
             action.perform(update, analyzer.identifier, matches)
         except Exception as e:
-            self.logger.error("While performing the action '{0}' the following exception occurred: '{1}'".format(action.name, e))
+            self.logger.error(f"While performing the action '{action.name}' the following exception occurred: '{e}'")

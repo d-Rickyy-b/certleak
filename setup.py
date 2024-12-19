@@ -45,7 +45,7 @@ else:
         exec(file.read(), version_dict)
     version = version_dict["__version__"]
 
-print("Building version {} of certleak".format(version))
+print(f"Building version {version} of certleak")
 
 setup(name="certleak",
       version=version,

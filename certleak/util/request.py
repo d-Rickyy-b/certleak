@@ -25,7 +25,7 @@ class Request(object):
             self.session = Session()
             self.proxies = proxies
             self.headers = headers
-            self.logger.info("Using the following custom proxies: {}".format(proxies))
+            self.logger.info(f"Using the following custom proxies: {proxies}")
             self.logger.info("Using the following system proxies: {}".format(utils.get_environ_proxies("https://example.com")))
             self._initialized = True
 

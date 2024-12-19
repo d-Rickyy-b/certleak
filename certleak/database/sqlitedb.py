@@ -14,7 +14,7 @@ class SQLiteDB(AbstractDB):
         self.lock = Lock()
         self.db_path = pathlib.Path(dbpath)
         self.logger = logging.getLogger(__name__)
-        self.logger.debug("Initializing SQLite - {0}".format(dbpath))
+        self.logger.debug(f"Initializing SQLite - {dbpath}")
 
         # Check if the folder path exists
         if not self.db_path.exists():
@@ -24,7 +24,7 @@ class SQLiteDB(AbstractDB):
 
             self.db_path.touch()
         elif self.db_path.is_dir():
-            raise ValueError("'{0}' is a directory. Use different path/name for database.".format(self.db_path))
+            raise ValueError(f"'{self.db_path}' is a directory. Use different path/name for database.")
 
         try:
             self.db = sqlite3.connect(str(self.db_path.absolute()), check_same_thread=False)
@@ -32,7 +32,7 @@ class SQLiteDB(AbstractDB):
             self.cursor = self.db.cursor()
             self._create_tables()
         except Exception as e:
-            self.logger.exception("An exception happened when initializing the database: {0}".format(e))
+            self.logger.exception(f"An exception happened when initializing the database: {e}")
             raise
 
         self.logger.debug("Connected to database!")
@@ -87,10 +87,10 @@ class SQLiteDB(AbstractDB):
         self.db.commit()
 
     def store(self, update):
-        self.logger.debug("Storing cert_update {0}".format(update.cert_index))
+        self.logger.debug(f"Storing cert_update {update.cert_index}")
 
         try:
             with self.lock:
                 self._insert_data(update)
         except Exception as e:
-            self.logger.debug("Exception '{0}'".format(e))
+            self.logger.debug(f"Exception '{e}'")
