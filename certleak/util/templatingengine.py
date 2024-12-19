@@ -49,8 +49,7 @@ class TemplatingEngine:
 
         flattened_dict = TemplatingEngine._flatten_update_dict(update_dict)
 
-        text = template.safe_substitute(DictWrapper(flattened_dict))
-        return text
+        return template.safe_substitute(DictWrapper(flattened_dict))
 
     @staticmethod
     def _flatten_update_dict(d, parent_key="", sep="__"):

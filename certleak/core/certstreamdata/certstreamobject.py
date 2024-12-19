@@ -13,6 +13,4 @@ class CertstreamObject:
         if not data:
             return None
 
-        data = data.copy()
-
-        return data
+        return data.copy()
