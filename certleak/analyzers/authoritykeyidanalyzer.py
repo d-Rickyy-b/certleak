@@ -30,6 +30,4 @@ class AuthorityKeyIDAnalyzer(BasicAnalyzer):
         authority_key_identifier = authority_key_identifier.replace("keyid:", "")
         authority_key_identifier.replace(r"\n", "")
 
-        if authority_key_identifier.lower() == self.authority_key_id:
-            return True
-        return False
+        return authority_key_identifier.lower() == self.authority_key_id
