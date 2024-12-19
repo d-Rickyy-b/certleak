@@ -1,6 +1,6 @@
 import logging
 from queue import Queue
-from signal import signal, SIGINT, SIGTERM, SIGABRT
+from signal import SIGABRT, SIGINT, SIGTERM, signal
 from threading import Event
 from time import sleep
 
@@ -9,7 +9,7 @@ from certleak.core.analyzerhandler import AnalyzerHandler
 from certleak.core.certstreamwrapper import CertstreamWrapper
 
 
-class CertLeak(object):
+class CertLeak:
 
     def __init__(self, certstream_url="wss://certstream.calidog.io/"):
         """
