@@ -55,7 +55,7 @@ class SaveFileAction(BasicAction):
         file_path = self.path / file_name
         content = self.get_file_content(update, analyzer_name, matches)
 
-        self.logger.debug(f"Writing file at '{file_path}'")
+        self.logger.debug("Writing file at '%s'", file_path)
 
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)

@@ -28,14 +28,14 @@ def thread_wrapper(target, exception_event, *args, **kwargs):
     """
     thread_name = current_thread().name
     logger = logging.getLogger(__name__)
-    logger.debug(f"{thread_name} - thread started")
+    logger.debug("%s - thread started", thread_name)
     try:
         target(*args, **kwargs)
     except Exception:
         exception_event.set()
         logger.exception("unhandled exception in %s", thread_name)
         raise
-    logger.debug(f"{thread_name} - thread ended")
+    logger.debug("%s - thread ended", thread_name)
 
 
 def join_threads(threads):
@@ -46,6 +46,6 @@ def join_threads(threads):
     """
     logger = logging.getLogger(__name__)
     for thread in threads:
-        logger.debug(f"Joining thread {thread.name}")
+        logger.debug("Joining thread %s", thread.name)
         thread.join()
-        logger.debug(f"Thread {thread.name} has ended")
+        logger.debug("Thread %s has ended", thread.name)

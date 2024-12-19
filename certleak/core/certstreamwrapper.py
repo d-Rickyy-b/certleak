@@ -55,7 +55,7 @@ class CertstreamWrapper(object):
             msg = Message.from_dict(message)
             update = msg.update
         except Exception as e:
-            self.logger.error("Something went wrong while de_jsoning: " + str(e))
+            self.logger.error("Something went wrong while de_jsoning: %s", e)
             self.error_counter += 1
             return
         else:
@@ -73,8 +73,7 @@ class CertstreamWrapper(object):
                                               len(self.processed_domains) / time_passed, self.update_counter / time_passed)
             self.logger.info(formatted_str)
 
-            format_str = "Queue length: {0}"
-            self.logger.info(format_str.format(self.update_queue.qsize()))
+            self.logger.info("Queue length: %s", self.update_queue.qsize())
 
             self.update_counter = 0
             self.error_counter = 0
@@ -86,14 +85,14 @@ class CertstreamWrapper(object):
         Error handler for the certstream module
         :return:
         """
-        self.logger.error(f"An error occurred: {ex}")
+        self.logger.error("An error occurred: %s", ex)
 
     def _on_close(self, ex):
         """
         Error handler for the certstream module
         :return:
         """
-        self.logger.error(f"An error occurred: ex: {ex}")
+        self.logger.error("An error occurred: ex: %s", ex)
 
     def _run(self):
         """

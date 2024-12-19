@@ -32,7 +32,7 @@ class WildcardCertAnalyzer(BasicAnalyzer):
             try:
                 extract_result = tldextract.extract(full_domain)
             except Exception as e:
-                self.logger.error(f"During matching of an update, the following exception occurred: {e}")
+                self.logger.error("During matching of an update, the following exception occurred: %s", e)
                 continue
 
             if extract_result.subdomain == "*" and not any(word in full_domain for word in self.blacklist):

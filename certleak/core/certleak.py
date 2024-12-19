@@ -53,7 +53,7 @@ class CertLeak(object):
     def signal_handler(self, signum, frame):
         """Handler method to handle signals"""
         self.is_idle = False
-        self.logger.info("Received signal {}, stopping...".format(signum))
+        self.logger.info("Received signal %s, stopping...", signum)
         self.stop()
 
     def add_analyzer(self, analyzer):

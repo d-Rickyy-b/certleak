@@ -25,8 +25,9 @@ class Request(object):
             self.session = Session()
             self.proxies = proxies
             self.headers = headers
-            self.logger.info(f"Using the following custom proxies: {proxies}")
-            self.logger.info("Using the following system proxies: {}".format(utils.get_environ_proxies("https://example.com")))
+            self.logger.info("Using the following custom proxies: %s", proxies)
+            system_proxies = utils.get_environ_proxies("https://example.com")
+            self.logger.info("Using the following system proxies: %s", system_proxies)
             self._initialized = True
 
     def _request_wrapper(self, data, timeout, *args, **kwargs):
@@ -41,7 +42,8 @@ class Request(object):
             response = self.session.request(headers=headers, proxies=self.proxies, data=data, timeout=timeout, *args, **kwargs)
             response_data = response.content.decode("utf-8")
         except Timeout:
-            self.logger.warning("Timeout while requesting {0}!".format(kwargs.get("url")))
+            url = kwargs.get("url")
+            self.logger.warning("Timeout while requesting %s!", url)
             return ""
 
         return response_data

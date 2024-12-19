@@ -74,7 +74,7 @@ class AnalyzerHandler(object):
         if update is None:
             logging.warning("Update is None, skipping!")
 
-        self.logger.debug(f"Analyzing update: {update.all_domains}")
+        self.logger.debug("Analyzing update: %s", update.all_domains)
         for analyzer in self.analyzers:
             matches = analyzer.match(update)
 
