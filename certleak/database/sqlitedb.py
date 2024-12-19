@@ -33,7 +33,7 @@ class SQLiteDB(AbstractDB):
             self.cursor = self.db.cursor()
             self._create_tables()
         except Exception as e:
-            self.logger.exception("An exception happened when initializing the database: %s", e)
+            self.logger.exception("An exception occurred when initializing the database")
             raise
 
         self.logger.debug("Connected to database!")
