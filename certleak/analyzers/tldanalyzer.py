@@ -16,8 +16,8 @@ class TLDAnalyzer(BasicAnalyzer):
         self.blacklist = listify(blacklist)
 
     def match(self, update):
-        """
-        Matches if the TLD of any domain contains any of the passed TLDs
+        """Matches if the TLD of any domain contains any of the passed TLDs.
+
         :param update: The certificate Update object
         :return:
         """

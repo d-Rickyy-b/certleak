@@ -15,8 +15,8 @@ class WildcardCertAnalyzer(BasicAnalyzer):
         self.blacklist = listify(blacklist)
 
     def match(self, update):
-        """
-        Matches if at least one of the subdomains of this certificate is '*', which is a wildcard domain
+        """Matches if at least one of the subdomains of this certificate is '*', which is a wildcard domain.
+
         :param update: The certificate Update object
         :return:
         """

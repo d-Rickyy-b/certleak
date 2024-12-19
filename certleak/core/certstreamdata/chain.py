@@ -6,8 +6,8 @@ class Chain(CertstreamObject):
     """Data class representing a certificate chain."""
 
     def __init__(self, cert_list):
-        """
-        Data class representing a certificate chain
+        """Data class representing a certificate chain.
+
         :param cert_list: List of parent certificates used to create the actual certificate of the Update.
         """
         super().__init__()
@@ -16,8 +16,8 @@ class Chain(CertstreamObject):
 
     @classmethod
     def from_dict(cls, data):
-        """
-        Create a Chain object from a dict
+        """Create a Chain object from a dict.
+
         :param data: dictionary data type containing the necessary data
         :return:
         """
@@ -34,9 +34,11 @@ class Chain(CertstreamObject):
         return cls(cert_list=cert_list)
 
     def __iter__(self):
+        """Return the iterator object."""
         return self
 
     def __next__(self):
+        """Return the next certificate in the chain."""
         if self._index < len(self._chain):
             result = self._chain[self._index]
             self._index += 1
@@ -45,4 +47,5 @@ class Chain(CertstreamObject):
         raise StopIteration
 
     def __repr__(self):
+        """Return a string representation of the object."""
         return f"{self._chain}"

@@ -20,8 +20,8 @@ class ActionHandler:
         self.__lock = Lock()
 
     def start(self, ready=None):
-        """
-        Starts the actionhandler to execute actions if updates are matched
+        """Starts the actionhandler to execute actions if updates are matched.
+
         :param ready: Event to check from the outside if the actionhandler has been started
         :return: None
         """
@@ -36,8 +36,8 @@ class ActionHandler:
                 ready.set()
 
     def stop(self):
-        """
-        Stops the actionhandler
+        """Stops the actionhandler.
+
         :return: None
         """
         self.logger.info("Orderly stopping ActionHandler!")

@@ -11,10 +11,10 @@ class SaveFileAction(BasicAction):
     name = "SaveFileAction"
 
     def __init__(self, path, file_ending=".txt", template=None):
-        """
-        Action to save each update as a file named '<update.cert_index>.txt'
-        If you want to store metadata within the file, use template strings
-        > https://github.com/d-Rickyy-b/certleak/wiki/Templating-in-actions
+        """Action to save each update as a file named '<update.cert_index>.txt'.
+
+        If you want to store metadata within the file, use template strings (https://github.com/d-Rickyy-b/certleak/wiki/Templating-in-actions).
+
         :param path: The directory in which the file(s) should be stored
         :param template: A template string describing how the update variables should be filled in
         """
@@ -35,8 +35,8 @@ class SaveFileAction(BasicAction):
         return TemplatingEngine.fill_template(update, analyzer_name, template_string=self.template, matches=matches)
 
     def perform(self, update, analyzer_name=None, matches=None):
-        """
-        Stores the update as a file
+        """Stores the update as a file.
+
         :param update: The cert update passed by the ActionHandler
         :param analyzer_name: The name of the analyzer which matched the update
         :param matches: List of matches returned by the analyzer

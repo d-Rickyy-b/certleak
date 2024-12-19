@@ -7,8 +7,8 @@ class CAFingerprintAnalyzer(BasicAnalyzer):
     name = "CAFingerprintAnalyzer"
 
     def __init__(self, actions, fingerprint):
-        """
-        Find a CA with a specific fingerprint
+        """Find a CA with a specific fingerprint.
+
         :param actions:
         :param fingerprint: Certificate fingerprint, bytes separated by colons
         """

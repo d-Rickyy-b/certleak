@@ -12,8 +12,8 @@ class FullDomainAnalyzer(BasicAnalyzer):
     logger = logging.getLogger(__name__)
 
     def __init__(self, actions, contained_words=None, exact_match=False):
-        """
-        Analyzer that searches the full cert domain names (subdomain.domain.tld) for the given words
+        """Analyzer that searches the full cert domain names (subdomain.domain.tld) for the given words.
+
         :param actions: A single action or a list of actions to be executed on every update
         :param contained_words: Words to search within the full domain
         :param exact_match: If set to True this analyzer will only match if the domain matches exactly any of the given words

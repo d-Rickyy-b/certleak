@@ -7,8 +7,8 @@ class AuthorityKeyIDAnalyzer(BasicAnalyzer):
     name = "AuthorityKeyIDAnalyzer"
 
     def __init__(self, actions, authority_key_id):
-        """
-        Find a CA with a specific authority_key_id
+        """Find a CA with a specific authority_key_id.
+
         :param actions:
         :param authority_key_id: Certificate authorityKeyID, string separated by colons.
         """

@@ -12,8 +12,8 @@ class WebhookAction(BasicAction):
     logger = logging.getLogger(__name__)
 
     def __init__(self, url, post_data=True):
-        """
-        Init method for the WebhookAction
+        """Init method for the WebhookAction.
+
         :param url: string, URL to POST against
         :param post_data: boolean, to decide wheather a update should be sent in the body
         """
@@ -22,8 +22,8 @@ class WebhookAction(BasicAction):
         self.post_data = post_data
 
     def perform(self, update, analyzer_name=None, matches=None):
-        """
-        Trigger the webhook
+        """Trigger the webhook.
+
         :param update: The update passed by the ActionHandler
         :param analyzer_name: The name of the analyzer which matched the update
         :param matches: List of matches returned by the analyzer

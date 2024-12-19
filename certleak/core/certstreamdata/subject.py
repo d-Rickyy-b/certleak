@@ -5,8 +5,8 @@ class Subject(CertstreamObject):
     """Data class for the Subject field of a certificate."""
 
     def __init__(self, aggregated, c, st, l, o, ou, cn, email_address):
-        """
-        Data class for the Subject field of a certificate
+        """Data class for the Subject field of a certificate.
+
         :param aggregated: Aggregated string of the other RDNs
         :param c: CountryName
         :param st: StateOrProvinceName
@@ -27,8 +27,8 @@ class Subject(CertstreamObject):
 
     @classmethod
     def from_dict(cls, data):
-        """
-        Create a Subject object from a dict
+        """Create a Subject object from a dict.
+
         :param data: dictionary data type containing the necessary data
         :return:
         """
@@ -48,4 +48,5 @@ class Subject(CertstreamObject):
         return cls(aggregated=aggregated, c=c, st=st, l=l, o=o, ou=ou, cn=cn, email_address=email_address)
 
     def __repr__(self):
+        """Return a string representation of the object."""
         return f"Subject(C='{self.C}', ST='{self.ST}', L='{self.L}', O='{self.O}', OU='{self.OU}', CN='{self.CN}' | aggregated='{self.aggregated}')"

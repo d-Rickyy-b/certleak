@@ -7,8 +7,8 @@ class AlwaysTrueAnalyzer(BasicAnalyzer):
     name = "AlwaysTrueAnalyzer"
 
     def __init__(self, actions):
-        """
-        Analyzer which always matches a certificate update to perform actions on every certificate update
+        """Analyzer which always matches a certificate update to perform actions on every certificate update.
+
         :param actions: A single action or a list of actions to be executed on every certificate update.
         """
         super().__init__(actions)

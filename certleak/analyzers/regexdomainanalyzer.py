@@ -9,8 +9,8 @@ class RegexDomainAnalyzer(BasicAnalyzer):
     name = "RegexDomainAnalyzer"
 
     def __init__(self, actions, pattern, flags=0):
-        """
-        Analyzer for using regex to find certificate updates for domains matching the pattern
+        """Analyzer for using regex to find certificate updates for domains matching the pattern.
+
         :param actions:
         :param pattern: pattern to match a certain domain name
         :param flags: the flags found in the 're' module

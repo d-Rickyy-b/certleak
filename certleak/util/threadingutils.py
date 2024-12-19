@@ -3,8 +3,8 @@ from threading import Thread, current_thread
 
 
 def start_thread(target, name, exception_event, *args, **kwargs):
-    """
-    Starts a thread passed as argument and catches exceptions that happens during execution
+    """Starts a thread passed as argument and catches exceptions that happens during execution.
+
     :param target: Method to be executed in the thread
     :param name: Name of the thread
     :param exception_event: An event that will be set if an exception occurred
@@ -18,8 +18,8 @@ def start_thread(target, name, exception_event, *args, **kwargs):
 
 
 def thread_wrapper(target, exception_event, *args, **kwargs):
-    """
-    Wrapper around the execution of a passed method, that catches and logs exceptions
+    """Wrapper around the execution of a passed method, that catches and logs exceptions.
+
     :param target: Method to be executed
     :param exception_event: An event that will be set if an exception occurred
     :param args: Arguments to be passed to the target method
@@ -39,8 +39,8 @@ def thread_wrapper(target, exception_event, *args, **kwargs):
 
 
 def join_threads(threads):
-    """
-    End all threads and join them back into the main thread
+    """End all threads and join them back into the main thread.
+
     :param threads: List of threads to be joined
     :return:
     """

@@ -14,8 +14,8 @@ class SubDomainAnalyzer(BasicAnalyzer):
     logger = logging.getLogger(__name__)
 
     def __init__(self, actions, subdomains, exact_match=True):
-        """
-        Analyzer that searches the full cert domain names (subdomain.domain.tld) for the given words
+        """Analyzer that searches the full cert domain names (subdomain.domain.tld) for the given words.
+
         :param actions: A single action or a list of actions to be executed on every update
         :param subdomains: The subdomains to search for
         :param exact_match: If set to True (default) it will only search for exact subdomain matches, else it will allow for partly matches

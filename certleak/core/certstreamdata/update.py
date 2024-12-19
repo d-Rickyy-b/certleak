@@ -7,8 +7,8 @@ class Update(CertstreamObject):
     """Data class for the certificate Update type from certstream."""
 
     def __init__(self, update_type, leaf_cert, cert_index, cert_link, seen, source, chain, raw_dict):
-        """
-        Data class for the certificate Update type from certstream
+        """Data class for the certificate Update type from certstream.
+
         :param update_type: The type of the certificate update
         :param leaf_cert: The LeafCert object of this update
         :param chain: The cert Chain object of this update
@@ -31,8 +31,8 @@ class Update(CertstreamObject):
 
     @classmethod
     def from_dict(cls, data):
-        """
-        Create an Update object from a dict
+        """Create an Update object from a dict.
+
         :param data: dictionary data type containing the necessary data
         :return:
         """
@@ -55,6 +55,7 @@ class Update(CertstreamObject):
         return self.raw_dict
 
     def __repr__(self):
+        """Return a string representation of the object."""
         return (
             f"(update_type: {self.update_type}, leaf_cert: {self.leaf_cert}, chain: {self.cert_index}, cert_index: {self.cert_link}, seen: {self.seen}, "
             f"source: {self.source}, chain: {self.chain})"

@@ -10,8 +10,8 @@ from certleak.util import join_threads, start_thread
 
 class CertstreamWrapper:
     def __init__(self, update_queue, certstream_url, exception_event):
-        """
-        The CertstreamWrapper is a wrapper around the python certstream module, allowing it to run in its own thread and filling new cert updates into a queue.
+        """The CertstreamWrapper is a wrapper around the python certstream module, allowing it to run in its own thread and filling new cert updates into a queue.
+
         :param update_queue: The queue into which new updates are sent
         :param certstream_url: The websocket URL from which certstream fetches new cert updates
         :param exception_event: An event that gets set when an unexpected exception occurs. Causes the thread to halt if set.
@@ -39,8 +39,8 @@ class CertstreamWrapper:
             logging.exception("Exception while handling certstream message!")
 
     def _fill_queue(self, message, context):
-        """
-        This method is being used as a callback function for the certstream module. It get's called on each new message.
+        """This method is being used as a callback function for the certstream module. It get's called on each new message.
+
         :param message: dict
         :param context: context
         :return:
@@ -80,22 +80,22 @@ class CertstreamWrapper:
             self.processed_domains = set()
 
     def _on_error(self, ex):
-        """
-        Error handler for the certstream module
+        """Error handler for the certstream module.
+
         :return:
         """
         self.logger.error("An error occurred: %s", ex)
 
     def _on_close(self, ex):
-        """
-        Error handler for the certstream module
+        """Error handler for the certstream module.
+
         :return:
         """
         self.logger.error("An error occurred: ex: %s", ex)
 
     def _run(self):
-        """
-        Internal method that starts the CertStreamClient and continouusly downloads cert updates as long as neither the stop nor exception event are set
+        """Internal method that starts the CertStreamClient and continouusly downloads cert updates as long as neither the stop nor exception event are set.
+
         :return:
         """
         while not self.__stop_event.is_set() and not self.__exception_event.is_set():
@@ -106,8 +106,8 @@ class CertstreamWrapper:
             time.sleep(1)
 
     def start(self):
-        """
-        Start certstream in own thread
+        """Start certstream in own thread.
+
         :return:
         """
         with self.__lock:

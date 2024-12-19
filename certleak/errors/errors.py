@@ -6,6 +6,7 @@ class CertleakError(Exception):
         self.message = message
 
     def __str__(self):
+        """Return the error message as a string."""
         return str(self.message)
 
 

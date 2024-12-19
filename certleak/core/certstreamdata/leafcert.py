@@ -7,8 +7,8 @@ class LeafCert(CertstreamObject):
     """Data class for the LeafCert data structure of certstream."""
 
     def __init__(self, subject, issuer, extensions, not_before, not_after, serial_number, fingerprint, signature_algorithm, all_domains, as_der):
-        """
-        Data class for the LeafCert data structure of certstream
+        """Data class for the LeafCert data structure of certstream.
+
         :param subject: Certificate subject
         :param extensions: Certificate extensions
         :param not_before: 'Not before' validity field
@@ -34,8 +34,8 @@ class LeafCert(CertstreamObject):
 
     @classmethod
     def from_dict(cls, data):
-        """
-        Create a LeafCert object from a dict
+        """Create a LeafCert object from a dict.
+
         :param data: dictionary data type containing the necessary data
         :return:
         """
@@ -68,4 +68,5 @@ class LeafCert(CertstreamObject):
         )
 
     def __repr__(self):
+        """Return a string representation of the object."""
         return f"(subject: {self.subject}, issuer: {self.issuer}, extensions: {self.extensions}, not_before: {self.not_before}, not_after: {self.not_after}, serial_number: {self.serial_number}, fingerprint: {self.fingerprint}, all_domains: {self.all_domains}, as_der: {self.as_der})"

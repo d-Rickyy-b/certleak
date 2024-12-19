@@ -11,9 +11,10 @@ class TemplatingEngine:
 
     @staticmethod
     def fill_template(update, analyzer_name, template_string, matches=None, **kwargs):
-        """
-        Returns a templated text with update contents inserted into the template string
-        Use ${key_name} in the template_string to insert update contents into it
+        """Returns a templated text with update contents inserted into the template string.
+
+        Use ${key_name} in the template_string to insert update contents into it.
+
         :param update: A update which serves as the source for template filling
         :param analyzer_name: Name of the analyzer
         :param template_string: A template string describing how the variables should be filled in
@@ -53,8 +54,8 @@ class TemplatingEngine:
 
     @staticmethod
     def _flatten_update_dict(d, parent_key="", sep="__"):
-        """
-        Flattens and returns any given dict
+        """Flattens and returns any given dict.
+
         :param d: The dictionary to be flattened
         :param parent_key: The key of the parent object
         :param sep: The separator element to separate original keys from each other
@@ -72,8 +73,8 @@ class TemplatingEngine:
 
     @staticmethod
     def _normalize_placeholders(template_string, sep="__"):
-        """
-        Normalizes placeholders from "dot-form" (data.element1.element2) into the flat dict format (keys joined with "__")
+        """Normalizes placeholders from "dot-form" (data.element1.element2) into the flat dict format (keys joined with "__").
+
         :param template_string: The original template string to normalize
         :param sep: The separator string
         :return:

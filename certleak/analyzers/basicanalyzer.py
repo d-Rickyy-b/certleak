@@ -11,10 +11,10 @@ class BasicAnalyzer:
     name = "BasicAnalyzer"
 
     def __init__(self, actions, identifier=None):
-        """
-        Basic analyzer which is extended to create other analyzer subclasses
+        """Basic analyzer which is extended to create other analyzer subclasses.
+
         :param actions: A single action or a list of actions to be executed on every update
-        :param identifier: The name or unique identifier for this specific analyzer
+        :param identifier: The name or unique identifier for this specific analyzer.
         """
         self.logger = logging.getLogger(__name__)
         self.actions = listify(actions)
@@ -26,8 +26,8 @@ class BasicAnalyzer:
             self._check_action(action)
 
     def add_action(self, action):
-        """
-        Adds a new action to the already present actions
+        """Adds a new action to the already present actions.
+
         :param action: New action to add to the present actions
         :return: None
         """
@@ -35,8 +35,8 @@ class BasicAnalyzer:
         self.actions.append(action)
 
     def match(self, update):
-        """
-        Checks if a certain update is matched by the conditions set for this analyzer
+        """Checks if a certain update is matched by the conditions set for this analyzer.
+
         :param update: A :class:`certleak.core.certstreamdata.update` object which should be matched
         :return: :obj:`bool` if the update has been matched
         """
@@ -55,15 +55,19 @@ class BasicAnalyzer:
             raise InvalidActionError(error_msg)
 
     def __and__(self, other):
+        """Returns a new analyzer which is the logical AND of the current one and another one."""
         return MergedAnalyzer(self, and_analyzer=other)
 
     def __or__(self, other):
+        """Returns a new analyzer which is the logical OR of the current one and another one."""
         return MergedAnalyzer(self, or_analyzer=other)
 
     def __invert__(self):
+        """Returns a new analyzer which is the negation of the current one."""
         return MergedAnalyzer(base_analyzer=None, not_analyzer=self)
 
     def __repr__(self):
+        """Returns a string representation of the analyzer."""
         if self.identifier is None:
             self.identifier = self.__class__.__name__
         return self.identifier
@@ -96,8 +100,8 @@ class MergedAnalyzer(BasicAnalyzer):
         super().__init__(actions, identifier=identifier)
 
     def match(self, update):
-        """
-        Checks if a certain update is matched by the conditions set for this analyzer
+        """Checks if a certain update is matched by the conditions set for this analyzer.
+
         :param update: A :class:`certleak.core.certstreamdata.update` object which should be matched
         :return: :obj:`bool` if the update has been matched
         """

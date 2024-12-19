@@ -16,8 +16,8 @@ class Extensions(CertstreamObject):
         certificatePolicies,
         ctlSignedCertificateTimestamp,
     ):
-        """
-        Data class representing the certificate extensions
+        """Data class representing the certificate extensions.
+
         :param keyUsage: keyUsage extension
         :param extendedKeyUsage: extendedKeyUsage extension
         :param basicConstraints: basicConstraints extension
@@ -41,8 +41,8 @@ class Extensions(CertstreamObject):
 
     @classmethod
     def from_dict(cls, data):
-        """
-        Create an Extensions object from a dict
+        """Create an Extensions object from a dict.
+
         :param data: dictionary data type containing the necessary data
         :return:
         """
@@ -73,6 +73,7 @@ class Extensions(CertstreamObject):
         )
 
     def __repr__(self):
+        """Return a string representation of the object."""
         return (
             f"keyUsage: {self.keyUsage}, extendedKeyUsage: {self.extendedKeyUsage}, basicContstraints: {self.basicConstraints}, subjectKeyIdentifier: "
             f"{self.subjectKeyIdentifier}, authorityKeyIdentifier: {self.authorityKeyIdentifier}, subjectAltName: {self.subjectAltName}, "

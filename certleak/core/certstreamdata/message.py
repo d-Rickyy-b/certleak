@@ -6,8 +6,8 @@ class Message(CertstreamObject):
     """Data class for the Message data structure of certstream."""
 
     def __init__(self, message_type, update):
-        """
-        Data class for the Message data structure of certstream
+        """Data class for the Message data structure of certstream.
+
         :param message_type: Type of the message (e.g. 'heartbeat' or 'certificate_update')
         :param update: Actual certificate update (called 'data').
         """
@@ -17,8 +17,8 @@ class Message(CertstreamObject):
 
     @classmethod
     def from_dict(cls, data):
-        """
-        Create a Message object from a dict
+        """Create a Message object from a dict.
+
         :param data: dictionary data type containing the necessary data
         :return:
         """
@@ -32,4 +32,5 @@ class Message(CertstreamObject):
         return cls(message_type=message_type, update=update)
 
     def __repr__(self):
+        """Return a string representation of the object."""
         return ""
