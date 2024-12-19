@@ -117,7 +117,7 @@ class CertstreamWrapper:
                 self.__threads.append(thread)
 
     def stop(self):
-        """Stops dispatching updates to the analyzers."""
+        """Stop dispatching updates to the analyzers."""
         self.logger.info("Orderly stopping CertstreamWrapper!")
         with self.__lock:
             self.__stop_event.set()

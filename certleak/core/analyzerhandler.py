@@ -27,13 +27,13 @@ class AnalyzerHandler:
             pass
 
     def add_analyzer(self, analyzer):
-        """Adds an analyzer to the list of analyzers."""
+        """Add an analyzer to the list of analyzers."""
         with self.__lock:
             if analyzer not in self.analyzers:
                 self.analyzers.append(analyzer)
 
     def start(self, workers=4, ready=None):
-        """Starts dispatching the certificate updates to the list of analyzers."""
+        """Start dispatching the certificate updates to the list of analyzers."""
         with self.__lock:
             if not self.running:
                 if len(self.analyzers) == 0:
@@ -89,7 +89,7 @@ class AnalyzerHandler:
                 self.action_queue.put((actions, update, analyzer, matches))
 
     def stop(self):
-        """Stops dispatching updates to the analyzers."""
+        """Stop dispatching updates to the analyzers."""
         self.logger.info("Orderly stopping AnalyzerHandler!")
         self.__stop_event.set()
         while self.running:

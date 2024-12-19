@@ -7,7 +7,7 @@ from certleak.analyzers import PreCertAnalyzer
 
 class PreCertAnalyzerTest(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case."""
+        """Set up the test case."""
         self.analyzer = PreCertAnalyzer(None)
 
     def test_positive(self):

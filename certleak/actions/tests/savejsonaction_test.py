@@ -6,7 +6,7 @@ from certleak.actions import SaveJSONAction
 
 class TestSaveJSONAction(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case."""
+        """Set up the test case."""
         self.action = SaveJSONAction(path="")
         self.update = Mock()
         self.path_mock = Mock()

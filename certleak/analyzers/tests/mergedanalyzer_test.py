@@ -17,7 +17,7 @@ class TestMergedAnalyzer(unittest.TestCase):
             return self.return_value
 
     def setUp(self):
-        """Setup test case."""
+        """Set up test case."""
         self.true_analyzer = self.NewAnalyzer(True)
         self.false_analyzer = self.NewAnalyzer(False)
         self.update_mock = Mock()

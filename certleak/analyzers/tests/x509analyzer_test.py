@@ -6,7 +6,7 @@ from certleak.analyzers import X509Analyzer
 
 class X509AnalyzerTest(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case."""
+        """Set up the test case."""
         self.analyzer = X509Analyzer(None)
 
     def test_positive(self):

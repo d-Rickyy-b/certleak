@@ -6,7 +6,7 @@ from certleak.analyzers import WildcardCertAnalyzer
 
 class WildcardCertAnalyzerTest(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case."""
+        """Set up the test case."""
         self.analyzer = WildcardCertAnalyzer(None)
 
     def test_None(self):

@@ -8,7 +8,7 @@ from certleak.util.templatingengine import TemplatingEngine
 
 class TestTemplatingEngine(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case."""
+        """Set up the test case."""
         self.update = Mock()
         self.update.to_dict = Mock()
         test_file = pathlib.Path(__file__).parent.absolute() / "test.json"

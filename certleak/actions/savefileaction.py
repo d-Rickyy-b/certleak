@@ -31,11 +31,11 @@ class SaveFileAction(BasicAction):
         return input_string
 
     def get_file_content(self, update, analyzer_name, matches):
-        """Returns the content to be written to the file."""
+        """Return the content to be written to the file."""
         return TemplatingEngine.fill_template(update, analyzer_name, template_string=self.template, matches=matches)
 
     def perform(self, update, analyzer_name=None, matches=None):
-        """Stores the update as a file.
+        """Store the update as a file.
 
         :param update: The cert update passed by the ActionHandler
         :param analyzer_name: The name of the analyzer which matched the update

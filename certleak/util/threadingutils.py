@@ -3,7 +3,7 @@ from threading import Thread, current_thread
 
 
 def start_thread(target, name, exception_event, *args, **kwargs):
-    """Starts a thread passed as argument and catches exceptions that happens during execution.
+    """Start a thread passed as argument and catches exceptions that happens during execution.
 
     :param target: Method to be executed in the thread
     :param name: Name of the thread

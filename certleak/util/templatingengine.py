@@ -11,7 +11,7 @@ class TemplatingEngine:
 
     @staticmethod
     def fill_template(update, analyzer_name, template_string, matches=None, **kwargs):
-        """Returns a templated text with update contents inserted into the template string.
+        """Return a templated text with update contents inserted into the template string.
 
         Use ${key_name} in the template_string to insert update contents into it.
 
@@ -73,7 +73,7 @@ class TemplatingEngine:
 
     @staticmethod
     def _normalize_placeholders(template_string, sep="__"):
-        """Normalizes placeholders from "dot-form" (data.element1.element2) into the flat dict format (keys joined with "__").
+        """Normalize placeholders from "dot-form" (data.element1.element2) into the flat dict format (keys joined with "__").
 
         :param template_string: The original template string to normalize
         :param sep: The separator string
