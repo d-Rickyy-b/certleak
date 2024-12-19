@@ -7,7 +7,7 @@ from .basicaction import BasicAction
 
 
 class TelegramAction(BasicAction):
-    """Action to send a Telegram message to a certain user or group/channel"""
+    """Action to send a Telegram message to a certain user or group/channel."""
 
     name = "TelegramAction"
 
@@ -16,7 +16,7 @@ class TelegramAction(BasicAction):
         Action to send a Telegram message to a certain user or group/channel
         :param token: The Telegram API token for your bot obtained by @BotFather
         :param receiver: The userID/groupID or channelID of the receiving entity
-        :param template: A template string describing how the update variables should be filled in
+        :param template: A template string describing how the update variables should be filled in.
         """
         super().__init__()
         self.logger = logging.getLogger(__name__)
@@ -30,7 +30,7 @@ class TelegramAction(BasicAction):
         self.template = template
 
     def perform(self, update, analyzer_name=None, matches=None):
-        """Send a message via a Telegram bot to a specified user, without checking for errors"""
+        """Send a message via a Telegram bot to a specified user, without checking for errors."""
         r = Request()
         text = TemplatingEngine.fill_template(update, analyzer_name, template_string=self.template, matches=matches)
 

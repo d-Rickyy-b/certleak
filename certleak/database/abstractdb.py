@@ -3,5 +3,5 @@ class AbstractDB:
         pass
 
     def store(self, update):
-        """Stores a cert update in the database"""
+        """Stores a cert update in the database."""
         raise NotImplementedError

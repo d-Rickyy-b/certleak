@@ -3,12 +3,12 @@ from .leafcert import LeafCert
 
 
 class Chain(CertstreamObject):
-    """Data class representing a certificate chain"""
+    """Data class representing a certificate chain."""
 
     def __init__(self, cert_list):
         """
         Data class representing a certificate chain
-        :param cert_list: List of parent certificates used to create the actual certificate of the Update
+        :param cert_list: List of parent certificates used to create the actual certificate of the Update.
         """
         super().__init__()
         self._chain = cert_list

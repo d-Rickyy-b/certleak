@@ -14,7 +14,7 @@ class CertstreamWrapper:
         The CertstreamWrapper is a wrapper around the python certstream module, allowing it to run in its own thread and filling new cert updates into a queue.
         :param update_queue: The queue into which new updates are sent
         :param certstream_url: The websocket URL from which certstream fetches new cert updates
-        :param exception_event: An event that gets set when an unexpected exception occurs. Causes the thread to halt if set
+        :param exception_event: An event that gets set when an unexpected exception occurs. Causes the thread to halt if set.
         """
         self.logger = logging.getLogger(__name__)
         self.update_queue = update_queue
@@ -117,7 +117,7 @@ class CertstreamWrapper:
                 self.__threads.append(thread)
 
     def stop(self):
-        """Stops dispatching updates to the analyzers"""
+        """Stops dispatching updates to the analyzers."""
         self.logger.info("Orderly stopping CertstreamWrapper!")
         with self.__lock:
             self.__stop_event.set()

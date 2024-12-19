@@ -6,7 +6,7 @@ from .basicaction import BasicAction
 
 
 class SaveFileAction(BasicAction):
-    """Action to save each certificate update as a file named '<update.cert_index>.txt'"""
+    """Action to save each certificate update as a file named '<update.cert_index>.txt'."""
 
     name = "SaveFileAction"
 
@@ -25,13 +25,13 @@ class SaveFileAction(BasicAction):
 
     @staticmethod
     def _remove_prefix(input_string, prefix):
-        """Remove a prefix from a certain string (e.g. remove '.' as prefix from '.txt')"""
+        """Remove a prefix from a certain string (e.g. remove '.' as prefix from '.txt')."""
         if input_string.startswith(prefix):
             return input_string[len(prefix) :]
         return input_string
 
     def get_file_content(self, update, analyzer_name, matches):
-        """Returns the content to be written to the file"""
+        """Returns the content to be written to the file."""
         return TemplatingEngine.fill_template(update, analyzer_name, template_string=self.template, matches=matches)
 
     def perform(self, update, analyzer_name=None, matches=None):

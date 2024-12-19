@@ -4,12 +4,12 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class DomainRegexAnalyzer(BasicAnalyzer):
-    """Analyzer for matching certificate domains against a regex"""
+    """Analyzer for matching certificate domains against a regex."""
 
     name = "DomainRegexAnalyzer"
 
     def __init__(self, actions, pattern, flags=0):
-        """Analyzer for matching certificate domains against a regex
+        """Analyzer for matching certificate domains against a regex.
 
         :param actions: A single action or a list of actions to be executed on every update
         :param pattern: The pattern to match the domains against
@@ -30,7 +30,7 @@ class DomainRegexAnalyzer(BasicAnalyzer):
         self.regex = re.compile(pattern=value, flags=self.flags)
 
     def match(self, update):
-        """Check if any of the certificate domain names match the given regex
+        """Check if any of the certificate domain names match the given regex.
 
         :param update: An update object which should be matched
         :return: `bool` if the update has been matched

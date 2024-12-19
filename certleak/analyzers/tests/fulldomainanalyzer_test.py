@@ -11,7 +11,7 @@ class TestFullDomainAnalyzer(unittest.TestCase):
         self.action = mock.MagicMock(spec=BasicAction)
 
     def test_setup(self):
-        """Check if the word list is initialized correctly"""
+        """Check if the word list is initialized correctly."""
         analyzer = FullDomainAnalyzer(self.action, "test")
         self.assertEqual(1, len(analyzer.contained_words))
         self.assertEqual("test", analyzer.contained_words[0])
@@ -22,7 +22,7 @@ class TestFullDomainAnalyzer(unittest.TestCase):
         self.assertEqual("123", analyzer.contained_words[1])
 
     def test_single_word(self):
-        """Check if the analyzer matches if passing a single word to it"""
+        """Check if the analyzer matches if passing a single word to it."""
         analyzer = FullDomainAnalyzer(self.action, "test")
         update = mock.Mock()
         update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]
@@ -40,7 +40,7 @@ class TestFullDomainAnalyzer(unittest.TestCase):
         self.assertFalse(analyzer.match(update))
 
     def test_empty_string(self):
-        """Check if the analyzer matches if the matched word is an empty string"""
+        """Check if the analyzer matches if the matched word is an empty string."""
         analyzer = FullDomainAnalyzer(self.action, "")
 
         update = mock.Mock()
@@ -53,14 +53,14 @@ class TestFullDomainAnalyzer(unittest.TestCase):
         self.assertFalse(analyzer.match(update))
 
     def test_none_update(self):
-        """Check if the analyzer matches if the update object is None"""
+        """Check if the analyzer matches if the update object is None."""
         analyzer = FullDomainAnalyzer(self.action, "test")
         update = None
         self.assertFalse(analyzer.match(update))
         self.assertEqual(0, len(analyzer.match(update)))
 
     def test_empty_update_domains(self):
-        """Check if the analyzer matches if the list of domains is empty"""
+        """Check if the analyzer matches if the list of domains is empty."""
         analyzer = FullDomainAnalyzer(self.action, "test")
         update = mock.Mock()
         update.all_domains = []
@@ -68,7 +68,7 @@ class TestFullDomainAnalyzer(unittest.TestCase):
         self.assertEqual(0, len(analyzer.match(update)))
 
     def test_multiple_words(self):
-        """Test if the analyzer matches multiple words correctly"""
+        """Test if the analyzer matches multiple words correctly."""
         analyzer = FullDomainAnalyzer(self.action, ["test", "example"])
         update = mock.Mock()
         update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]
@@ -84,13 +84,13 @@ class TestFullDomainAnalyzer(unittest.TestCase):
         self.assertEqual(1, len(analyzer.match(update)))
 
     def test_actions_present(self):
-        """Check if the action passed to the analyzer is being stored"""
+        """Check if the action passed to the analyzer is being stored."""
         action = mock.MagicMock(spec=BasicAction)
         analyzer = FullDomainAnalyzer(action)
         self.assertEqual([action], analyzer.actions)
 
     def test_exact_match(self):
-        """Check if the analyzer matches if passing a single domain to it using the exact_match param"""
+        """Check if the analyzer matches if passing a single domain to it using the exact_match param."""
         analyzer = FullDomainAnalyzer(self.action, "test", exact_match=True)
         update = mock.Mock()
         update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]

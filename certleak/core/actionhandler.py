@@ -7,7 +7,7 @@ from certleak.util import join_threads, start_thread
 
 
 class ActionHandler:
-    """Handler to execute all the actions, if an analyzer matches an update"""
+    """Handler to execute all the actions, if an analyzer matches an update."""
 
     def __init__(self, action_queue=None, exception_event=None, stop_event=None):
         self.logger = logging.getLogger(__name__)
@@ -71,7 +71,7 @@ class ActionHandler:
                     break
 
     def _perform_action_wrapper(self, action, update, analyzer, matches):
-        """A wrapper around the perform method to catch exceptions"""
+        """A wrapper around the perform method to catch exceptions."""
         try:
             self.logger.debug("Performing action '%s' on update '%s' matched by analyzer '%s'!", action.name, update.all_domains, analyzer.identifier)
             action.perform(update, analyzer.identifier, matches)

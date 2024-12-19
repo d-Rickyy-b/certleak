@@ -4,7 +4,7 @@ from .subject import Subject
 
 
 class LeafCert(CertstreamObject):
-    """Data class for the LeafCert data structure of certstream"""
+    """Data class for the LeafCert data structure of certstream."""
 
     def __init__(self, subject, issuer, extensions, not_before, not_after, serial_number, fingerprint, signature_algorithm, all_domains, as_der):
         """

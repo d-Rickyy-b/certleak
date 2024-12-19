@@ -2,7 +2,7 @@ import logging
 
 
 class BasicAction:
-    """Base class for actions which can be performed on updates"""
+    """Base class for actions which can be performed on updates."""
 
     name = "BasicAction"
 
@@ -10,5 +10,5 @@ class BasicAction:
         self.logger = logging.getLogger(__name__)
 
     def perform(self, update, analyzer_name=None, matches=None):
-        """Perform the action on the passed update"""
+        """Perform the action on the passed update."""
         raise NotImplementedError

@@ -10,6 +10,6 @@ class CertleakError(Exception):
 
 
 class InvalidActionError(CertleakError):
-    """Representation of an error for invalid actions passed to analyzers"""
+    """Representation of an error for invalid actions passed to analyzers."""
 
     pass

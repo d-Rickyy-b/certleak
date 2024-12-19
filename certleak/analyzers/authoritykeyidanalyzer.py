@@ -2,7 +2,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class AuthorityKeyIDAnalyzer(BasicAnalyzer):
-    """Analyzer for finding certificate updates that are signed by a CA with a specified subject key identifier"""
+    """Analyzer for finding certificate updates that are signed by a CA with a specified subject key identifier."""
 
     name = "AuthorityKeyIDAnalyzer"
 
@@ -10,7 +10,7 @@ class AuthorityKeyIDAnalyzer(BasicAnalyzer):
         """
         Find a CA with a specific authority_key_id
         :param actions:
-        :param authority_key_id: Certificate authorityKeyID, string separated by colons
+        :param authority_key_id: Certificate authorityKeyID, string separated by colons.
         """
         super().__init__(actions)
 

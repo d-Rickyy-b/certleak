@@ -2,7 +2,7 @@ from .certstreamobject import CertstreamObject
 
 
 class Subject(CertstreamObject):
-    """Data class for the Subject field of a certificate"""
+    """Data class for the Subject field of a certificate."""
 
     def __init__(self, aggregated, c, st, l, o, ou, cn, email_address):
         """
@@ -13,7 +13,7 @@ class Subject(CertstreamObject):
         :param l: Locality
         :param o: Organization
         :param ou: OrganizationalUnit
-        :param cn: CommonName
+        :param cn: CommonName.
         """
         super().__init__()
         self.aggregated = aggregated

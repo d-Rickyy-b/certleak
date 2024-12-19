@@ -10,7 +10,7 @@ class TestWebhookAction(unittest.TestCase):
         self.action = WebhookAction(url=self.url)
 
     def test_init(self):
-        """Check if initialization works as intended"""
+        """Check if initialization works as intended."""
         self.assertEqual(self.action.url, self.url)
         self.assertEqual(self.action.post_data, True)
 
@@ -19,7 +19,7 @@ class TestWebhookAction(unittest.TestCase):
 
     @patch("certleak.actions.webhookaction.Request")
     def test_perform_data(self, request_mock):
-        """Check that running perform with post_data set to True sends a webrequest to the specified webhook url"""
+        """Check that running perform with post_data set to True sends a webrequest to the specified webhook url."""
         update = Mock()
         update.to_dict = Mock(return_value="This is a test")
         analyzer_name = "name"
@@ -36,7 +36,7 @@ class TestWebhookAction(unittest.TestCase):
 
     @patch("certleak.actions.webhookaction.Request")
     def test_perform_no_data(self, request_mock):
-        """Check that running perform with post_data set to False sends a webrequest to the specified webhook url"""
+        """Check that running perform with post_data set to False sends a webrequest to the specified webhook url."""
         self.action = WebhookAction(url=self.url, post_data=False)
 
         update = Mock()
@@ -54,7 +54,7 @@ class TestWebhookAction(unittest.TestCase):
 
     @patch("certleak.actions.webhookaction.Request")
     def test_perform_None(self, request_mock):
-        """Check that passing None as update will not actually post the webhook"""
+        """Check that passing None as update will not actually post the webhook."""
         update = None
         analyzer_name = "name"
         matches = []

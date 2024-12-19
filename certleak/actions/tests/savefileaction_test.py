@@ -6,7 +6,7 @@ from certleak.actions import SaveFileAction
 
 class TestSaveFileAction(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case"""
+        """Sets up the test case."""
         self.action = SaveFileAction(path="")
         self.update = Mock()
         self.path_mock = Mock()
@@ -18,7 +18,7 @@ class TestSaveFileAction(unittest.TestCase):
         return path
 
     def test_init(self):
-        """Check if parameters are saved correctly"""
+        """Check if parameters are saved correctly."""
         self.action = SaveFileAction(path="/this/is/a/test")
         self.assertEqual("/this/is/a/test", self.action.path.as_posix())
 
@@ -140,7 +140,7 @@ class TestSaveFileAction(unittest.TestCase):
 
     @patch("certleak.actions.savefileaction.TemplatingEngine")
     def test_get_file_content(self, te_mock):
-        """Check if the content of the file is returned correctly"""
+        """Check if the content of the file is returned correctly."""
         te_mock.fill_template = Mock(return_value="This is the content")
         content = self.action.get_file_content(self.update, "", [])
         self.assertEqual("This is the content", content)

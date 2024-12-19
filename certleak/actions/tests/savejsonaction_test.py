@@ -6,7 +6,7 @@ from certleak.actions import SaveJSONAction
 
 class TestSaveJSONAction(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case"""
+        """Sets up the test case."""
         self.action = SaveJSONAction(path="")
         self.update = Mock()
         self.path_mock = Mock()
@@ -18,7 +18,7 @@ class TestSaveJSONAction(unittest.TestCase):
         return path
 
     def test_get_file_content(self):
-        """Check if the content of the file is returned correctly"""
+        """Check if the content of the file is returned correctly."""
         self.update.to_dict = Mock(return_value={"test": "content", "another": "item"})
         content_string = """{"test": "content", "another": "item"}"""
         content = self.action.get_file_content(self.update, "", [])
@@ -27,7 +27,7 @@ class TestSaveJSONAction(unittest.TestCase):
     @patch("builtins.open")
     @patch("certleak.actions.savejsonaction.json")
     def test_file_ending(self, json_mock, open_mock):
-        """Check that the file ending is actually json, not txt"""
+        """Check that the file ending is actually json, not txt."""
         json_mock.dumps = Mock(return_value="json content!")
 
         self.action.path = self.path_mock

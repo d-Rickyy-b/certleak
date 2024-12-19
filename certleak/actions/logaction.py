@@ -6,7 +6,7 @@ from .basicaction import BasicAction
 
 
 class LogAction(BasicAction):
-    """Action to log a cert update to console"""
+    """Action to log a cert update to console."""
 
     name = "LogAction"
 

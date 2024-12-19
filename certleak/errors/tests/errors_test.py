@@ -9,7 +9,7 @@ class TestErrors(unittest.TestCase):
         pass
 
     def test_CertleakError(self):
-        """Test if the CertleakError returns its string message"""
+        """Test if the CertleakError returns its string message."""
         msg = "This is a test message"
         error = CertleakError(msg)
         self.assertEqual(msg, error.message)

@@ -6,7 +6,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class FullDomainAnalyzer(BasicAnalyzer):
-    """Analyzer to match domains containing certain strings"""
+    """Analyzer to match domains containing certain strings."""
 
     name = "FullDomainAnalyzer"
     logger = logging.getLogger(__name__)

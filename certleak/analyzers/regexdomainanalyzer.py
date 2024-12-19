@@ -4,7 +4,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class RegexDomainAnalyzer(BasicAnalyzer):
-    """Analyzer for using regex to find certificate updates for domains matching the pattern"""
+    """Analyzer for using regex to find certificate updates for domains matching the pattern."""
 
     name = "RegexDomainAnalyzer"
 
@@ -19,7 +19,7 @@ class RegexDomainAnalyzer(BasicAnalyzer):
         self.regex = re.compile(pattern, flags)
 
     def match(self, update):
-        """Match the domains of a cert update against the given regex"""
+        """Match the domains of a cert update against the given regex."""
         if not update or not update.all_domains:
             return False
 

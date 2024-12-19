@@ -4,7 +4,7 @@ from .savefileaction import SaveFileAction
 
 
 class SaveJSONAction(SaveFileAction):
-    """Action to save a json formatted file to the disk"""
+    """Action to save a json formatted file to the disk."""
 
     name = "SaveJSONAction"
 
@@ -12,5 +12,5 @@ class SaveJSONAction(SaveFileAction):
         super().__init__(path, file_ending=".json")
 
     def get_file_content(self, update, analyzer_name, matches):
-        """Returns the content to be written to the file"""
+        """Returns the content to be written to the file."""
         return json.dumps(update.to_dict())

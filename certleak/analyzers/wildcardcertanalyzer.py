@@ -6,7 +6,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class WildcardCertAnalyzer(BasicAnalyzer):
-    """Analyzer for finding wildcard certificates"""
+    """Analyzer for finding wildcard certificates."""
 
     name = "WildcardCertAnalyzer"
 

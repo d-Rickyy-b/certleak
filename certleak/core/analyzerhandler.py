@@ -7,7 +7,7 @@ from certleak.util import join_threads, start_thread
 
 
 class AnalyzerHandler:
-    """The AnalyzerHandler dispatches certificate updates to the analyzers"""
+    """The AnalyzerHandler dispatches certificate updates to the analyzers."""
 
     def __init__(self, update_queue, action_queue=None, exception_event=None):
         self.logger = logging.getLogger(__name__)
@@ -27,13 +27,13 @@ class AnalyzerHandler:
             pass
 
     def add_analyzer(self, analyzer):
-        """Adds an analyzer to the list of analyzers"""
+        """Adds an analyzer to the list of analyzers."""
         with self.__lock:
             if analyzer not in self.analyzers:
                 self.analyzers.append(analyzer)
 
     def start(self, workers=4, ready=None):
-        """Starts dispatching the certificate updates to the list of analyzers"""
+        """Starts dispatching the certificate updates to the list of analyzers."""
         with self.__lock:
             if not self.running:
                 if len(self.analyzers) == 0:
@@ -89,7 +89,7 @@ class AnalyzerHandler:
                 self.action_queue.put((actions, update, analyzer, matches))
 
     def stop(self):
-        """Stops dispatching updates to the analyzers"""
+        """Stops dispatching updates to the analyzers."""
         self.logger.info("Orderly stopping AnalyzerHandler!")
         self.__stop_event.set()
         while self.running:

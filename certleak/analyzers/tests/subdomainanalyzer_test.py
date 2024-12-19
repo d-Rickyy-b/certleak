@@ -11,7 +11,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.action = mock.MagicMock(spec=BasicAction)
 
     def test_setup(self):
-        """Check if the word list is initialized correctly"""
+        """Check if the word list is initialized correctly."""
         analyzer = SubDomainAnalyzer(self.action, "test")
         self.assertEqual("test", analyzer.subdomains[0])
         self.assertEqual(True, analyzer.exact_match)
@@ -21,7 +21,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.assertEqual(False, analyzer.exact_match)
 
     def test_single_word_exact(self):
-        """Check if the analyzer matches in "exact" mode if passing a single word to it"""
+        """Check if the analyzer matches in "exact" mode if passing a single word to it."""
         analyzer = SubDomainAnalyzer(self.action, "test", exact_match=True)
         update = mock.Mock()
         update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]
@@ -41,7 +41,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.assertFalse(analyzer.match(update))
     
     def test_single_word_contained(self):
-        """Check if the analyzer matches substrings if not in exact mode"""
+        """Check if the analyzer matches substrings if not in exact mode."""
         analyzer = SubDomainAnalyzer(self.action, "test", exact_match=False)
         update = mock.Mock()
         update.all_domains = ["test.example.com", "test2.example.com", "test.beispiel.de", "nosubdomain.de"]
@@ -62,7 +62,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.assertFalse(analyzer.match(update))
 
     def test_empty_string(self):
-        """Check if the analyzer matches domains without subdomains if the subdomain param is an empty string"""
+        """Check if the analyzer matches domains without subdomains if the subdomain param is an empty string."""
         analyzer = SubDomainAnalyzer(self.action, "")
 
         update = mock.Mock()
@@ -73,7 +73,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.assertEqual("nosubdomain.de", matches[0])
 
     def test_none_update(self):
-        """Check if the analyzer matches if the update object is None"""
+        """Check if the analyzer matches if the update object is None."""
         analyzer = SubDomainAnalyzer(self.action, "test")
         update = None
         matches = analyzer.match(update)
@@ -81,7 +81,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.assertEqual(0, len(matches))
 
     def test_empty_update_domains(self):
-        """Check if the analyzer matches if the list of domains is empty"""
+        """Check if the analyzer matches if the list of domains is empty."""
         analyzer = SubDomainAnalyzer(self.action, "test")
         update = mock.Mock()
         update.all_domains = []
@@ -90,7 +90,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.assertEqual(0, len(matches))
 
     def test_multiple_words(self):
-        """Test if the analyzer matches multiple words correctly"""
+        """Test if the analyzer matches multiple words correctly."""
         analyzer = SubDomainAnalyzer(self.action, ["test", "example"])
         update = mock.Mock()
         update.all_domains = ["test.example.com", "test2.example.com", "example.beispiel.de", "nosubdomain.de"]
@@ -111,7 +111,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
         self.assertEqual(0, len(matches))
 
     def test_actions_present(self):
-        """Check if the action passed to the analyzer is being stored"""
+        """Check if the action passed to the analyzer is being stored."""
         action = mock.MagicMock(spec=BasicAction)
         analyzer = SubDomainAnalyzer(action, "word")
         self.assertEqual([action], analyzer.actions)

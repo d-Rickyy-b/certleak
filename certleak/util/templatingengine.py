@@ -7,7 +7,7 @@ from certleak.util import DictWrapper
 
 
 class TemplatingEngine:
-    """Wrapper class around the python templating feature"""
+    """Wrapper class around the python templating feature."""
 
     @staticmethod
     def fill_template(update, analyzer_name, template_string, matches=None, **kwargs):
@@ -18,7 +18,7 @@ class TemplatingEngine:
         :param analyzer_name: Name of the analyzer
         :param template_string: A template string describing how the variables should be filled in
         :param matches: A list of matches that was returned from the analyzer
-        :return: Filled template
+        :return: Filled template.
         """
         if update is None:
             logging.error("Update is None!")

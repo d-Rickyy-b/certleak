@@ -9,11 +9,11 @@ class TestBasicAction(unittest.TestCase):
         self.action = BasicAction()
 
     def test_name(self):
-        """Make sure the action has the correct name"""
+        """Make sure the action has the correct name."""
         self.assertEqual("BasicAction", self.action.name)
 
     def test_perform(self):
-        """Test if calling perform will raise a NotImplementedError"""
+        """Test if calling perform will raise a NotImplementedError."""
         update = Mock()
         with self.assertRaises(NotImplementedError):
             self.action.perform(update)

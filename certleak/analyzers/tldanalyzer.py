@@ -6,7 +6,7 @@ from .basicanalyzer import BasicAnalyzer
 
 
 class TLDAnalyzer(BasicAnalyzer):
-    """Analyzer to check for certain TLDs"""
+    """Analyzer to check for certain TLDs."""
 
     name = "TLDAnalyzer"
 

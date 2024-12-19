@@ -2,7 +2,7 @@ def listify(obj):
     """
     Make sure the given object is a list
     :param obj: Any object - either None, a list of objects or a single object
-    :return: The given object formatted as list
+    :return: The given object formatted as list.
     """
     if obj is None:
         # When the object is None, an empty list will be returned

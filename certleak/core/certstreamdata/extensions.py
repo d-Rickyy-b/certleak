@@ -2,7 +2,7 @@ from .certstreamobject import CertstreamObject
 
 
 class Extensions(CertstreamObject):
-    """Data class representing the certificate extensions"""
+    """Data class representing the certificate extensions."""
 
     def __init__(
         self,
@@ -26,7 +26,7 @@ class Extensions(CertstreamObject):
         :param authorityInfoAccess: authorityInfoAccess extension
         :param subjectAltName: subjectAltName extension
         :param certificatePolicies: certificatePolicies extension
-        :param ctlSignedCertificateTimestamp: ctlSignedCertificateTimestamp extension
+        :param ctlSignedCertificateTimestamp: ctlSignedCertificateTimestamp extension.
         """
         super().__init__()
         self.keyUsage = keyUsage

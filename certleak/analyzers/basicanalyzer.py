@@ -6,7 +6,7 @@ from certleak.util import listify
 
 
 class BasicAnalyzer:
-    """Basic analyzer class"""
+    """Basic analyzer class."""
 
     name = "BasicAnalyzer"
 
@@ -44,7 +44,7 @@ class BasicAnalyzer:
         raise NotImplementedError(msg)
 
     def _check_action(self, action):
-        """Check if a passed action is a subclass of BasicAction"""
+        """Check if a passed action is a subclass of BasicAction."""
         if not isinstance(action, BasicAction):
             if isinstance(action, type):
                 error_msg = f"You passed a class as action for '{self.identifier}' but an instance of an action was expected!"
@@ -70,7 +70,7 @@ class BasicAnalyzer:
 
 
 class MergedAnalyzer(BasicAnalyzer):
-    """Merged analyzer class"""
+    """Merged analyzer class."""
 
     name = "MergedAnalyzer"
 

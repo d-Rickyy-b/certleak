@@ -3,13 +3,13 @@ from .update import Update
 
 
 class Message(CertstreamObject):
-    """Data class for the Message data structure of certstream"""
+    """Data class for the Message data structure of certstream."""
 
     def __init__(self, message_type, update):
         """
         Data class for the Message data structure of certstream
         :param message_type: Type of the message (e.g. 'heartbeat' or 'certificate_update')
-        :param update: Actual certificate update (called 'data')
+        :param update: Actual certificate update (called 'data').
         """
         super().__init__()
         self.message_type = message_type

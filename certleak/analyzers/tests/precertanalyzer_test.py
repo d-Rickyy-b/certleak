@@ -7,23 +7,23 @@ from certleak.analyzers import PreCertAnalyzer
 
 class PreCertAnalyzerTest(unittest.TestCase):
     def setUp(self):
-        """Sets up the test case"""
+        """Sets up the test case."""
         self.analyzer = PreCertAnalyzer(None)
 
     def test_positive(self):
-        """Check if analyzer matches updates of type PreCertAnalyzer"""
+        """Check if analyzer matches updates of type PreCertAnalyzer."""
         update = Mock()
         update.update_type = "PrecertLogEntry"
         self.assertTrue(self.analyzer.match(update))
 
     def test_negative(self):
-        """Check if analyzer doesn't match anything else"""
+        """Check if analyzer doesn't match anything else."""
         update = Mock()
         update.update_type = "OtherEntry"
         self.assertFalse(self.analyzer.match(update))
 
     def test_actions(self):
-        """Check if actions are set up properly"""
+        """Check if actions are set up properly."""
         action1 = Mock(spec=BasicAction)
         action2 = Mock(spec=BasicAction)
         self.analyzer = PreCertAnalyzer(action1)
