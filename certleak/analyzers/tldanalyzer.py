@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import tldextract
 
 from certleak.util import listify

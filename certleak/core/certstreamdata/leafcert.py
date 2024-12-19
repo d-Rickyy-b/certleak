@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from .certstreamobject import CertstreamObject
 from .extensions import Extensions
 from .subject import Subject

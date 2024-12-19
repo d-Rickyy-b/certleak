@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import logging
 
 from certleak.util import TemplatingEngine

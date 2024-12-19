@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import logging
 from queue import Queue
 from signal import signal, SIGINT, SIGTERM, SIGABRT

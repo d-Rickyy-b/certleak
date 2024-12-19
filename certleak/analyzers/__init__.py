@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from .alwaystrueanalyzer import AlwaysTrueAnalyzer
 from .authoritykeyidanalyzer import AuthorityKeyIDAnalyzer
 from .basicanalyzer import BasicAnalyzer

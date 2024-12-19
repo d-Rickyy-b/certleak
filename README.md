@@ -36,7 +36,6 @@ Below you'll find an example configuration. Keep in mind that it's fully up to y
 In general the workflow is as follows: `New Certificate -> Analyzer matches -> Actions are executed`
 
 ```python
-# -*- coding: utf-8 -*-
 import logging
 from pathlib import Path
 

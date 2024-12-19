@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from .certstreamobject import CertstreamObject
 from .leafcert import LeafCert
 

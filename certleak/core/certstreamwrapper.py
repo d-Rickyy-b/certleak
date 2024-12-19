@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import logging
 import time
 from threading import Lock, Event
