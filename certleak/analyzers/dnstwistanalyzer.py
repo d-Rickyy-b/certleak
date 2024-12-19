@@ -2,6 +2,7 @@
 import dnstwist
 
 from certleak.util import listify
+
 from .basicanalyzer import BasicAnalyzer
 
 

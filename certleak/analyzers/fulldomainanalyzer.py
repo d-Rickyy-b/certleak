@@ -1,6 +1,7 @@
 import logging
 
 from certleak.util import listify
+
 from .basicanalyzer import BasicAnalyzer
 
 

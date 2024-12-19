@@ -4,7 +4,7 @@ from queue import Empty, Queue
 from threading import Event, Lock
 from time import sleep
 
-from certleak.util import start_thread, join_threads
+from certleak.util import join_threads, start_thread
 
 
 class ActionHandler(object):

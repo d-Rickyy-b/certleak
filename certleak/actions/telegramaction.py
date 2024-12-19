@@ -2,6 +2,7 @@ import logging
 import re
 
 from certleak.util import Request, TemplatingEngine
+
 from .basicaction import BasicAction
 
 

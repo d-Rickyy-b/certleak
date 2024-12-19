@@ -1,11 +1,11 @@
 import logging
 import time
-from threading import Lock, Event
+from threading import Event, Lock
 
 from certstream.core import CertStreamClient
 
 from certleak.core.certstreamdata.message import Message
-from certleak.util import start_thread, join_threads
+from certleak.util import join_threads, start_thread
 
 
 class CertstreamWrapper(object):

@@ -1,6 +1,7 @@
 import tldextract
 
 from certleak.util import listify
+
 from .basicanalyzer import BasicAnalyzer
 
 
