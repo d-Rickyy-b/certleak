@@ -40,7 +40,8 @@ class BasicAnalyzer:
         :param update: A :class:`certleak.core.certstreamdata.update` object which should be matched
         :return: :obj:`bool` if the update has been matched
         """
-        raise NotImplementedError("Your analyzer must implement the match method!")
+        msg = "Your analyzer must implement the match method!"
+        raise NotImplementedError(msg)
 
     def _check_action(self, action):
         """Check if a passed action is a subclass of BasicAction"""
@@ -89,7 +90,8 @@ class MergedAnalyzer(BasicAnalyzer):
             actions = self._not_analyzer.actions
             identifier = f"~({self._not_analyzer})"
         else:
-            raise ValueError("Neither and_analyzer, or_analyzer nor not_analyzer are set!")
+            msg = "Neither and_analyzer, or_analyzer nor not_analyzer are set!"
+            raise ValueError(msg)
 
         super().__init__(actions, identifier=identifier)
 

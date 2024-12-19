@@ -22,7 +22,8 @@ class TelegramAction(BasicAction):
         self.logger = logging.getLogger(__name__)
 
         if token is None or not re.match(r"[0-9]+:[a-zA-Z0-9\-_]+", token):
-            raise ValueError("Bot token not correct or None!")
+            msg = "Bot token not correct or None!"
+            raise ValueError(msg)
 
         self.token = token
         self.receiver = receiver
