@@ -48,9 +48,6 @@ Issues = "https://github.com/d-Rickyy-b/certleak/issues"
 [tool.setuptools.dynamic]
 version = {attr = "certleak.version.__version__"}
 
-[project.scripts]
-rephish = "certleak.certleak:main"
-
 [tool.ruff]
 target-version = "py39"
 line-length = 180
