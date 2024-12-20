@@ -56,7 +56,7 @@ class CertLeak:
         self.stop()
 
     def add_analyzer(self, analyzer):
-        """Adds a new analyzer to the list of analyzers.
+        """Add a new analyzer to the list of analyzers.
 
         :param analyzer: Instance of a BasicAnalyzer
         :return: None

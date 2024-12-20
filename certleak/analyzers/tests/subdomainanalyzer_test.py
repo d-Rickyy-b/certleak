@@ -39,7 +39,7 @@ class TestSubDomainAnalyzer(unittest.TestCase):
 
         analyzer = SubDomainAnalyzer(self.action, "mytest")
         self.assertFalse(analyzer.match(update))
-    
+
     def test_single_word_contained(self):
         """Check if the analyzer matches substrings if not in exact mode."""
         analyzer = SubDomainAnalyzer(self.action, "test", exact_match=False)

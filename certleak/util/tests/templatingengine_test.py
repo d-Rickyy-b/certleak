@@ -19,7 +19,7 @@ class TestTemplatingEngine(unittest.TestCase):
         """Checks if templating engine inserts cert data correctly into the template."""
         analyzer_name = "TestAnalyzer"
         template = "New update matched by analyzer '${analyzer_name}' - Domains: ${data.leaf_cert.subject.CN}\n\nMatches:\n${matches}"
-        expected = "New update matched by analyzer '{0}' - Domains: {1}\n\nMatches:\n{2}".format(analyzer_name, "www.mail.casamarket.ro", "")
+        expected = "New update matched by analyzer '{}' - Domains: {}\n\nMatches:\n{}".format(analyzer_name, "www.mail.casamarket.ro", "")
 
         result = TemplatingEngine.fill_template(update=self.update, analyzer_name=analyzer_name, template_string=template)
 
@@ -28,7 +28,7 @@ class TestTemplatingEngine(unittest.TestCase):
     def test_fill_template_default_template(self):
         """Checks if templating engine inserts cert data correctly into the template for the default template."""
         analyzer_name = "TestAnalyzer"
-        expected = "New update matched by analyzer '{0}' - Domains: {1}\n\nMatches:\n{2}".format(analyzer_name, "www.mail.casamarket.ro", "")
+        expected = "New update matched by analyzer '{}' - Domains: {}\n\nMatches:\n{}".format(analyzer_name, "www.mail.casamarket.ro", "")
 
         result = TemplatingEngine.fill_template(update=self.update, analyzer_name=analyzer_name, template_string=None)
         self.assertEqual(expected, result, msg="Filled template string is not the same as the expected result!")
