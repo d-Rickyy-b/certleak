@@ -81,7 +81,7 @@ class SQLiteDB(AbstractDB):
             self.cursor.execute("INSERT INTO domains (domain, cert_fingerprint, stored_at) VALUES (?, ?, ?)", (domain, cert.fingerprint, now))
             self.db.commit()
         self.cursor.execute(
-            "INSERT INTO certs (fingerprint, not_before, not_after, serial_number, all_domains, subjectCN, stored_at) " "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO certs (fingerprint, not_before, not_after, serial_number, all_domains, subjectCN, stored_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
             (cert.fingerprint, cert.not_before, cert.not_after, cert.serial_number, ", ".join(cert.all_domains), cert.subject.CN, now),
         )
         self.db.commit()
