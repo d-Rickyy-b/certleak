@@ -83,6 +83,8 @@ exclude = [
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
+    "ANN", # Annotations
+    "ARG002", # unused-method-argument
     "BLE001", # Do not catch blind exception: `Exception`
     "E501", # Line too long
     "UP012",
@@ -98,8 +100,13 @@ ignore = [
     "FBT001",
     "FBT002",
     "FBT003",
-    "PLR0911",
-    "D107",
+    "D100", # undocumented-public-module
+    "D101", # undocumented-public-class
+    "D102", # undocumented-public-method
+    "D104", # undocumented-public-package
+    "D401", # non-imperative-mood
+    "D404", # docstring-starts-with-this
+    "D107", # undocumented-public-init
     "D213", # multi-line-summary-second-line
     "D203", # one-blank-line-before-class
     "ERA001", # Found commented-out code
@@ -107,6 +114,11 @@ ignore = [
     "TD", # Disable all flake8-todos warnings
     "SIM108", # Use ternary operator
     "PT009", # pytest-unittest-assertion
+    "PT027", # pytest-unittest-raises-assertion
+    "PLR0911", # too-many-return-statements
+    "PLR0913", # too-many-arguments
+    "PIE790", # unnecessary-placeholder
+    "PERF203", # try-except-in-loop
 ]
 
 [tool.ruff.format]
@@ -123,4 +135,13 @@ line-ending = "lf"
 ]
 "**_test.py" = [
     "N802", # Function name should be lowercase
+]
+"certleak/util/request.py" = [
+    "ARG003", # Unused class method argument
+]
+"examples/example.py" = [
+    "INP001", # implicit-namespace-package
+]
+"certleak/analyzers/tldanalyzer.py" = [
+    "PERF401", # manual-list-comprehension
 ]
