@@ -53,8 +53,8 @@ class CertstreamWrapper:
         try:
             msg = Message.from_dict(message)
             update = msg.update
-        except Exception as e:
-            self.logger.error("Something went wrong while de_jsoning: %s", e)
+        except Exception:
+            self.logger.exception("Something went wrong while de_jsoning")
             self.error_counter += 1
             return
         else:
@@ -65,7 +65,8 @@ class CertstreamWrapper:
                 self.processed_domains.add(domain)
 
         time_passed = int(time.time()) - self.last_info
-        if time_passed >= 60:
+        minute_in_seconds = 60
+        if time_passed >= minute_in_seconds:
             format_str = "Processed {0} updates ({1} unique domains) during the last {2} seconds. {3:.1f} domains/s, {4:.1f} certs/s"
             formatted_str = format_str.format(
                 self.update_counter, len(self.processed_domains), time_passed, len(self.processed_domains) / time_passed, self.update_counter / time_passed

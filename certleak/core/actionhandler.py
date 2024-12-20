@@ -75,5 +75,5 @@ class ActionHandler:
         try:
             self.logger.debug("Performing action '%s' on update '%s' matched by analyzer '%s'!", action.name, update.all_domains, analyzer.identifier)
             action.perform(update, analyzer.identifier, matches)
-        except Exception as e:
-            self.logger.error("While performing the action '%s' the following exception occurred: '%s'", action.name, e)
+        except Exception:
+            self.logger.exception("While performing the action '%s' an exception occurred", action.name)
