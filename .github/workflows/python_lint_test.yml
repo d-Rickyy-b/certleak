@@ -5,9 +5,9 @@ name: Run tests and lint
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ main, dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test-and-lint:

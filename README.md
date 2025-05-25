@@ -1,10 +1,10 @@
-[![certleak logo created by https://t.me/AboutTheDot](https://raw.githubusercontent.com/d-Rickyy-b/certleak/master/docs/certleak_logo.png)](https://github.com/d-Rickyy-b/certleak)
+[![certleak logo created by https://t.me/AboutTheDot](https://raw.githubusercontent.com/d-Rickyy-b/certleak/main/docs/certleak_logo.png)](https://github.com/d-Rickyy-b/certleak)
 
 # certleak - Cert-Monitoring Python Framework
 
 [![Run tests and lint](https://github.com/d-Rickyy-b/certleak/workflows/Run%20tests%20and%20lint/badge.svg)](https://github.com/d-Rickyy-b/certleak/actions?query=workflow%3A%22Run+tests+and+lint%22)
 [![PyPI version](https://badge.fury.io/py/certleak.svg)](https://pypi.org/project/certleak/)
-[![Coverage Status](https://coveralls.io/repos/github/d-Rickyy-b/certleak/badge.svg?branch=master)](https://coveralls.io/github/d-Rickyy-b/certleak?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/d-Rickyy-b/certleak/badge.svg?branch=main)](https://coveralls.io/github/d-Rickyy-b/certleak?branch=main)
 
 Certleak is a tool to monitor and analyze TLS certificates as they are issued.
 It is heavily inspired by [Phishing Catcher](https://github.com/x0rz/phishing_catcher) by [x0rz](https://twitter.com/x0rz).
@@ -22,7 +22,7 @@ There is no way to use this tool to analyze certificates that have been issued i
 
 Creating new analyzers or actions is as easy as creating a new python file.
 Certleak is built with extensibility in mind.
-Check the [analyzer docs](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/analyzers/README.md) as well as the [actions docs](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/actions/README.md).  
+Check the [analyzer docs](https://github.com/d-Rickyy-b/certleak/tree/main/certleak/analyzers/README.md) as well as the [actions docs](https://github.com/d-Rickyy-b/certleak/tree/main/certleak/actions/README.md).  
 
 ## Installation
 
@@ -80,7 +80,7 @@ certleak.add_analyzer(letsencrypt_analyzer)
 certleak.start()
 ```
 
-You can find [full example files](https://github.com/d-Rickyy-b/certleak/tree/master/certleak/examples) in this repo as well.
+You can find [full example files](https://github.com/d-Rickyy-b/certleak/tree/main/certleak/examples) in this repo as well.
 
 ### License
 
