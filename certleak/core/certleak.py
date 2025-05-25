@@ -7,6 +7,7 @@ from time import sleep
 from certleak.core.actionhandler import ActionHandler
 from certleak.core.analyzerhandler import AnalyzerHandler
 from certleak.core.certstreamwrapper import CertstreamWrapper
+from certleak.version import __version__
 
 
 class CertLeak:
@@ -32,7 +33,7 @@ class CertLeak:
 
         :return:
         """
-        self.logger.info("Starting certleak!")
+        self.logger.info(f"Starting certleak v{__version__}!")
         self.certstream_wrapper.start()
         self.analyzer_handler.start()
         self.action_handler.start()
