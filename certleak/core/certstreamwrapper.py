@@ -87,12 +87,12 @@ class CertstreamWrapper:
         """
         self.logger.error("An error occurred: %s", ex)
 
-    def _on_close(self, ex):
-        """Error handler for the certstream module.
+    def _on_close(self, _, status_code, close_msg):
+        """Close handler for the certstream module.
 
         :return:
         """
-        self.logger.error("An error occurred: ex: %s", ex)
+        self.logger.info("Closing the websocket - %s - %s", status_code, close_msg)
 
     def _run(self):
         """Internal method that starts the CertStreamClient and continouusly downloads cert updates as long as neither the stop nor exception event are set.
@@ -102,7 +102,7 @@ class CertstreamWrapper:
         while not self.__stop_event.is_set() and not self.__exception_event.is_set():
             self.certstream_client = CertStreamClient(self._handle_message, self.certstream_url, skip_heartbeats=True)
             self.certstream_client._on_error = self._on_error
-            self.certstream_client._on_close = self._on_close
+            self.certstream_client.on_close = self._on_close
             self.certstream_client.run_forever(ping_interval=30)
             time.sleep(1)
 
