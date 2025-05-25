@@ -37,4 +37,3 @@ certleak.add_analyzer(phishing_analyzer)
 # certleak.add_analyzer(xyz_analyzer)
 
 certleak.start()
-certleak.idle()
