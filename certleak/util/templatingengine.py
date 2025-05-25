@@ -21,8 +21,9 @@ class TemplatingEngine:
         :param matches: A list of matches that was returned from the analyzer
         :return: Filled template.
         """
+        logger = logging.getLogger(__name__)
         if update is None:
-            logging.error("Update is None!")
+            logger.error("Update is None!")
             return None
 
         update_dict = update.to_dict()
@@ -31,7 +32,7 @@ class TemplatingEngine:
         if matches is None:
             update_dict["matches"] = ""
         elif not isinstance(matches, list):
-            logging.error("Matches object passed to fill_template is not of type 'list'!")
+            logger.error("Matches object passed to fill_template is not of type 'list'!")
         else:
             # When there are elements in the matches object, we want them to be formatted as single string
             matches_str = "\n".join(matches)

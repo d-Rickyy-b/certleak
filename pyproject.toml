@@ -82,6 +82,7 @@ select = ["ALL"]
 ignore = [
     "ANN", # Annotations
     "ARG002", # unused-method-argument
+    "ARG004", # Unused static method argument
     "BLE001", # Do not catch blind exception: `Exception`
     "E501", # Line too long
     "UP012",

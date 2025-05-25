@@ -36,7 +36,7 @@ class CertstreamWrapper:
         try:
             self._fill_queue(message, context)
         except Exception:
-            logging.exception("Exception while handling certstream message!")
+            self.logger.exception("Exception while handling certstream message!")
 
     def _fill_queue(self, message, context):
         """This method is being used as a callback function for the certstream module. It get's called on each new message.

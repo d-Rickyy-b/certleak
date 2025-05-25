@@ -71,7 +71,7 @@ class AnalyzerHandler:
 
     def _process_update(self, update):
         if update is None:
-            logging.warning("Update is None, skipping!")
+            self.logger.warning("Update is None, skipping!")
 
         self.logger.debug("Analyzing update: %s", update.all_domains)
         for analyzer in self.analyzers:
