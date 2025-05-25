@@ -49,6 +49,7 @@ class CertLeak:
         self.certstream_wrapper.stop()
         self.analyzer_handler.stop()
         self.action_handler.stop()
+        self.logger.info("Certleak stopped!")
 
     def signal_handler(self, signum, frame):
         """Handler method to handle signals."""

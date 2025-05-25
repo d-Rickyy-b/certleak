@@ -98,3 +98,4 @@ class AnalyzerHandler:
 
         join_threads(self.__threads)
         self.__threads = []
+        self.logger.info("AnalyzerHandler stopped!")

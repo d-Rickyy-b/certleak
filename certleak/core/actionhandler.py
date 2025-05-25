@@ -49,6 +49,7 @@ class ActionHandler:
 
             join_threads(self.__threads)
             self.__threads = []
+        self.logger.info("ActionHandler stopped!")
 
     def _start(self):
         while self.running:
