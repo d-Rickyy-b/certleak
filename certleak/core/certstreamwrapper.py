@@ -80,7 +80,7 @@ class CertstreamWrapper:
             self.last_info = int(time.time())
             self.processed_domains = set()
 
-    def _on_error(self, ex):
+    def _on_error(self, _, ex):
         """Error handler for the certstream module.
 
         :return:
